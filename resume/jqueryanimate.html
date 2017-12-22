@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        #square {
+            height: 100px;
+            width: 100px;
+            background-color: #ffa54f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button>click here to animate</button><br>
+    <div id=square></div>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("#square").animate({
+                    height: '300px',
+                    opacity: '0.2'
+                }, 1000);
+                $("#square").animate({
+                    width: '300px',
+                    opacity: '0.8'
+                }, 1000);
+                $("#square").animate({
+                    height: '100px',
+                    opacity: '0.2'
+                }, 1000);
+                $("#square").animate({
+                    width: '100px',
+                    opacity: '0.8'
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <button>click here to hide and show paragraph</button>
+    <p>This paragraph is hide when click button</p>
+    <p>This paragraph also hide when click button</p>
+    <h1>This paragraph does't hide when button click</h1>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("p").toggle(1000);
+            });
+        });
+    </script>
+</body>
+
+</html>

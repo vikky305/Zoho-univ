@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+    <head>
+        <title>nodejs</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            body{
+                width: 100%;
+                height: 100%;
+                background-color: blanchedalmond;
+                text-align: center;
+            }
+            .te{
+                font-size: 45px;
+            }
+            .fun{
+                    height: 50%;
+                    width: 70%;
+                    margin-left: 15%;
+                    margin-top: 4%;
+                    background-color: burlywood;
+                    padding-top: 4%;
+                    padding-bottom: 4%;
+            }
+            .a{
+                height: 50px;
+                width: 150px;
+            }
+            .b{
+                    display: block;
+                    margin-left: 34%;
+                    width: 300px;
+            }
+            .ho{
+                padding-top:20px;
+                font-size: 20px;
+            }
+            .al{
+                height: 70px;
+                width: 500px;
+                margin-left: 30%;
+                position: absolute;
+                background-color: deepskyblue;
+                font-size: 25px;
+                padding-top: 20px;
+            }
+            .hide{
+                display:none;
+            }
+        </style>
+        <script>
+            function sendRequest(fun) 
+            {
+                document.getElementById('out').innerText="hi";
+                var xmlHttp=new XMLHttpRequest();
+                xmlHttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200){
+                        if(fun=="home"){
+                            location.href="/";
+                        }
+                        else{
+                            var val=this.responseText;
+                            document.getElementById('out').innerText=val;
+                            document.getElementsByClassName('al')[0].classList.remove("hide");
+                            setTimeout(myFunction, 3000);
+                        }
+                        
+                    }
+                }
+                var in1=document.getElementById("inp1").value;
+                var in2=document.getElementById("inp2").value;
+                var in3=document.getElementById("inp3").value;
+                var in4=document.getElementById("inp4").value;
+                var in5=document.getElementById("inp5").value;
+                xmlHttp.open("post","/add",true);
+                xmlHttp.send("email="+in3+"&user="+in1+"&age="+in2+"&phone="+in4+"&password="+in5);
+                
+            }
+            function myFunction() {
+                document.getElementsByClassName("al")[0].classList.add("hide");
+            }
+        </script>
+    </head>
+    <body>
+        <div class="al hide " id="out"></div>
+        <h1 class="te">Add reports</h1>
+        <div class='fun'>
+            User name:
+        <input type="text" name="user" class="form-group b" id="inp1"/>
+            E-mail:
+        <input type="email" name="email" class="form-group b" id="inp3"/>
+        age:
+        <input type="number" name="age" class="form-group b" id="inp2"/>
+        phone number:
+        <input type="number" name="phone" class="form-group b" id="inp4"/>
+        User password:
+        <input type="password" name="password" class="form-group b" id="inp5"/>
+        <button type="button" class="btn btn-success a" onclick='sendRequest()' value="Submit">Success</button>
+        </div>    
+        <div class="ho" onclick='sendRequest("home")'>Click here to home page</div>
+       
+    </body>
+</html>

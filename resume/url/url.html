@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <title>nodejs</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <script>
+            function hi(){
+                var in1=document.getElementById("inp1").value;
+                var patt = new RegExp("(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})", "g");
+                var res = patt.test(in1);
+                if(res){
+                    sendRequest(in1)
+                }
+            }
+            function sendRequest(in1) {
+                var xmlHttp=new XMLHttpRequest();
+                xmlHttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200){
+                        var val=this.responseText;
+                        document.getElementById('out').innerText=val;
+                        document.getElementById('out').setAttribute("href", val);
+                    }
+                }
+                document.getElementById("inp1").value="";
+                xmlHttp.open("post","/add",true);
+                xmlHttp.send("url="+in1);
+                
+            }
+        </script>
+    </head>
+    <body>
+            Url:
+        <input type="text" name="user" class="form-group b" id="inp1"/>
+        <button type="button" class="btn btn-success" onclick='hi()' value="Submit">Success</button>
+       <div style="height:100px;width:1000px;font-size:30px"><a target='iframe_a' id="out"></a></div>
+    </body>
+</html>

@@ -1,0 +1,1376 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Fitness</title>
+        <link rel="icon" href="https://cdn2.iconfinder.com/data/icons/healthy-eating/92/icon112-10-512.png">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <style>
+            body,html{
+                height:100%;
+                width:100%;
+            }
+            *{
+                margin:0;
+                padding:0;
+            }
+            .main{
+                width:100%;
+                height:100%;
+            }
+            .projet {
+                height: 63%;
+                width: 100px;
+                margin-left: 5%;
+                cursor: pointer;
+                float: left;
+            }
+            .part1{
+                width:20%;
+                float:left;
+            }
+            .part2{
+                 width:60%;
+                float:left;
+                    padding: 10px 0px 10px 10px;
+                line-height: 2;
+            }
+            .hq{
+                width:100%;
+                float:left;
+            }
+            .text{
+                font-size: 30px;
+                text-align: center;
+                padding: 7px;
+                color: cadetblue;
+            }
+            .hg{
+                font-style: italic;
+                font-family: serif;
+                font-size: 20px;
+                width:87%;
+                margin:auto;
+            }
+            #id{
+                float: right;
+                margin-right: 4%;
+                font-size: 30px;
+                margin-top: 1%;
+            }
+            .bg{
+                font-style: italic;
+                font-family: serif;
+                font-size: 20px;
+                width:96%;
+                margin:auto;
+            }
+            
+            .header{
+                height:20%;
+                width:100%;
+            }
+            .logoImg{
+                height: 63%;
+                width: 12%;
+                cursor: pointer;
+                float: left;
+            }
+            .award{
+                margin-top: 10px;
+                float: right;
+                width: 4%;
+                cursor :pointer;
+                height: 50%;
+            }
+            .am{
+                width: 15%;
+                float: left;
+                margin-left: 20%;
+            }
+            .am1 {
+                font-size: 20px;
+                padding: 20px;
+                font-family: sans-serif;
+                cursor: default;
+            }
+            .hi{
+                margin-left:0px;
+                width:65%;
+            }
+            .page{
+                color: #fff;
+                background-color: lightsalmon;
+                border-color: orangered;
+                font-size: 25px;
+            }
+            .home{
+                width: 100%;
+                float: left;
+                height: calc(100% - 20%);
+                overflow-y: scroll;
+            }
+            .personalDetails{
+                width: 100%;
+                float: left;
+                height: calc(100% - 20%);
+                overflow-y: scroll;
+            }
+            .diet,.exercise{
+                width:100%;
+                height: 905px;
+                
+            }
+            .exercise{
+                margin-left: 770px;
+                float: right;
+            }
+            .group{
+                height: 37%;
+            }
+            
+            .he{
+                font-style: oblique;
+                font-family: cursive;
+                cursor :default;
+                font-weight:bold;
+                font-size: 23px;
+                padding: 0px 20px;
+            }
+            .hide{
+                display:none;
+            }
+            .in{
+                width: 50%;
+                display: block;
+                height: 40px;
+                margin-top: 25px;
+                border-radius: 9px;
+                outline: none;
+                border: 1px solid #e0dddd;
+            
+            }
+            .su{
+                margin-top:2em;
+            }
+            .bmiw{
+                font-size: 40px;
+                width: 100%;
+                text-align: center;
+                margin-top: 20px;
+                font-family: sans-serif;
+                cursor: default;
+            }
+            .bmiv{
+                font-size: 30px;
+                width: 100%;
+                text-align: center;
+                cursor: default;
+            }
+            .res{
+                height:106px;
+                width:100%;
+                font-size: 25px;
+                color: white;
+                cursor: default;
+            }
+            .bmii{
+                float: right;
+                margin: 50px 2em 20px 0px;
+                background-color: wheat;
+            }
+            .po{
+                margin-top:1em;
+                float:left;
+                margin-left:17px;
+            }
+            .ui{
+                float:left;
+                width:100%;
+            }
+            .resu{
+                width: 290px;
+                height: 150px;
+                margin-left: 50px;
+                margin-top: 50px;
+                border: 1px solid #d2cece;
+                    float: left;
+            }
+            .head{
+                width: 100%;
+                background-color: bisque;
+                font-size: 45px;
+                text-align: center;
+                color: indigo;
+                padding: 20px 0px;
+                cursor: default;
+            }
+            .dietPlan{
+                float: left;
+                width: 100%;
+                height: calc(100% - 20%);
+                overflow-y: scroll;
+            }
+            .pa1{
+                font-size: 20px;
+                margin-left: 20%;
+                margin-top:2em;
+                width:60%;
+                
+            }
+            .he1{
+                font-weight: bold;
+                width:60%;
+                margin-left: 20%;
+                margin-top:1em;
+                font-size:30px;
+            }
+            .he2{
+                font-weight: bold;
+                width:60%;
+                margin-left: 20%;
+                margin-top:1em;
+                font-size:20px;
+            }
+            .para{
+                background-color:lightgray;
+                width:100%;
+                float:left;
+                padding-bottom:35px;
+                cursor: default;
+            }
+            .menu{
+                padding-top:50px;
+                background-color: cornsilk;
+                cursor: default;
+            }
+            .pic{
+                height: 270px;
+                width: 220px;
+                background-color: white;
+                margin-top:50px;
+                text-align:center;
+            }
+            .a{
+                margin-left: 525px;
+                margin-top: 20px;
+            }
+            .food{
+                height: 200px;
+                width: 200px;
+                margin-left: 10px;
+                margin-top: 10px;
+            }
+            .b{
+                float: left;
+                margin-left: 100px;
+            }
+            .c{
+                margin-left: 205px;
+                float: left;
+            }
+            .d{
+                margin-left: 960px;
+            }
+            .he2{
+                text-align:center;
+                margin-top:50px;
+            }
+            .e{
+                margin-left: 330px;
+                float: left;
+            }
+            .f{
+                margin-left: 744px;
+            }
+            .tip{
+                background-color:blanchedalmond;
+                padding-top: 100px;
+                cursor: default;
+            }
+            .tip1{
+                height: 55px;
+                width: 200px;
+                background-color: blueviolet;
+                margin-left: 540px;
+                font-size: 40px;
+                text-align: center;
+                color: white;
+            }
+            .do{
+                background-color: lightgray;
+                width: 1050px;
+                margin-left: 160px;
+            }
+            .doq{
+                text-align: center;
+                padding-top: 20px;
+            }
+            .dos{
+                margin-left: 45px;
+                font-size:25px;
+            }
+            .gr{
+                color:green;
+            }
+            .rd{
+                color:red;
+            }
+            .wou{
+                text-align: center;
+                height: 220px;
+                width: 300px;
+                background-color:white;
+            }
+            .wout{
+                width: 270px;
+                height: 200px;
+                margin-left: 4px;
+            }
+            .workOut{
+                background-color: whitesmoke;
+                padding-top: 60px;
+                width: 100%;
+                float: left;
+                height: calc(100% - 20%);
+                overflow-y: scroll;
+            }
+            .a1{
+                margin-left:100px;
+                float:left;
+            }
+            .a2{
+                margin-left:100px;
+                float:left;
+            }
+            .a3{
+                margin-left: 890px;
+                margin-top: 55px;
+            }
+            .a4{
+                margin-left: 290px;
+                margin-top:50px;
+                float:left;
+            }
+            .a5{
+                margin-left: 720px;
+                margin-top: 50px;
+            }
+            .back{
+                position: absolute;
+                height: 50px;
+                width: 50px;
+                top: 210px;
+                cursor: pointer;
+            }
+            .me{
+                height: 90px;
+                width: 200px;
+                background-color: bisque;
+                margin-top: 160px;
+                float: left;
+                margin-left: 40px;
+                text-align: center;
+                padding-top: 16px;
+                font-size: 40px;
+                cursor: pointer;
+            }
+            .snacks1,.chinese1,.beverages1,.meals1,.tiffin1{
+                margin-top:200px;
+            }
+            .cal{
+                text-align: center;
+            }
+            label{
+                margin: 0px 40px 75px 160px;
+            }
+            #calo{
+                color: purple;
+            }
+            .alert1{
+                height: 60px;
+                width: 600px;
+                    background-color: darkgray;
+                position: absolute;
+                margin-top: 3%;
+                margin-left: 27%;
+                color: deepskyblue;
+                font-size: 32px;
+                text-align: center;
+                padding-top: 8px;
+                border-radius: 35px;
+                    z-index: 6;
+            }
+            .bmi{
+                height: calc(100% - 20%);
+                overflow-y: scroll;
+                float: left;
+                width: 100%;
+            }
+            .calorieTracking{
+                height: calc(100% - 20%);
+                overflow-y: scroll;
+                float: left;
+                width: 100%;
+            }
+            .addco{
+                height: 63%;
+                width: 159px;
+                margin-left: 100px;
+                float: left;
+                background-color: aquamarine;
+                font-size: 210%;
+                text-align: center;
+                padding-top: 1%;
+                cursor: pointer;
+            }
+            .editco{
+                height: 63%;
+                width: 159px;
+                margin-left: 100px;
+                float: left;
+                background-color: darkkhaki;
+                font-size: 25px;
+                text-align: center;
+                cursor: pointer;
+            }
+            .afood{
+                margin-top: 50px;
+                margin-left: 550px;
+            }
+            .calorie{
+                margin-top: 10px;
+                margin-left: 538px;
+            }
+            #submit{
+                margin-left: 614px;
+                margin-top: 20px;
+            }
+            .pass{
+                margin-left: 540px;
+                margin-top: 25px;
+            }
+            .nepa{
+                margin-left: 509px;
+            }
+            .repa{
+                margin-left: 457px;
+            }
+            .submit1{
+                margin-left: 595px;
+                margin-top: 20px;
+                height: 45px;
+                width: 110px;
+                background-color: antiquewhite;
+            }
+            .inputText {
+              margin-left:200px;
+              font-size: 14px;
+              width: 200px;
+              height: 25px;
+              outline: none;
+                border: none;
+                border-bottom: 2px solid black;
+            }
+            .img {
+                    height: 920px;
+                width: 100%;
+            }
+            .floating-label {
+              pointer-events: none;
+              margin-left: -200px;
+              margin-top: 18px;
+              transition: 0.2s ease all;
+            }
+            input:focus ~ .floating-label,
+            input:not(:focus):valid ~ .floating-label {
+              margin-left: -365px;
+            }
+            .minus{
+                float: right;
+                background-image: url(https://maxcdn.icons8.com/Share/icon/ultraviolet/Very_Basic//minus1600.png);
+                height: 50px;
+                background-repeat: no-repeat;
+                width: 50px;
+                background-size: 100% 100%;
+                margin-right: 17%;
+                margin-top: 48px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="alert1 hide"></div>
+        <div class="infor hide" style="width: 64%;height: 100%;position: absolute;background-color: floralwhite;z-index: 2;margin-left: 18%;">
+            <div style="margin-left: 105px;margin-top: 35px;">
+                <input type="text" class="inputText" id="nick" required/>
+                <span class="floating-label">Enter your nick name</span>
+            </div>
+            <div style="margin-left: 105px;margin-top: 80px;">
+                <input type="number" class="inputText" id="phone" required/>
+                <span class="floating-label">Enter your phone number</span>
+            </div>
+            <div style="margin-left: 105px;margin-top: 80px;">
+                <input type="number" class="inputText" id="age" required/>
+                <span class="floating-label">Enter your age</span>
+            </div>
+            <div style="margin-left: 105px;margin-top: 80px;">
+                <input type="number" class="inputText" id="height" required/>
+                <span class="floating-label">Enter your height</span>
+            </div>
+            <div style="margin-left: 105px;margin-top: 80px;">
+                <input type="number" class="inputText" id="weight" required/>
+                <span class="floating-label">Enter your weight</span>
+            </div>
+            <div style="margin-left: 105px;margin-top: 80px;">
+                <input type="text" class="inputText" id="city" required/>
+                <span class="floating-label">Enter your city</span>
+            </div>
+            <button class="btn btn-success" id="personSubmit" style="margin-left: 42%;margin-top: 4%;">Submit</button>
+        </div>
+        <div class="profile hide" style="position: absolute;z-index: 1;right: 65px;top: 20px;">
+            <div class="btn-group-vertical">
+              <button type="button" class="btn btn-secondary" onclick="switchPage('.personalDetails')">Edit details</button>
+              <button type="button" class="btn btn-secondary" onclick="switchPage('.change')">Change password</button>
+              <button type="button" class="btn btn-secondary" onclick="project()">Sign out</button>
+              <button type="button" class="btn btn-secondary" onclick="delete1()">Delete account</button>
+              <button type="button" class="btn btn-secondary" onclick="switchPage('.add')">Add food</button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="header">
+                <img class="logoImg" onclick="switchPage('.home')" src="https://www.freelogoservices.com/api/main/images/1j+ojl1FOMkX9WypfBe43D6kjfKIrRdGmBfJwXs1M3EMoAJtlSAkgfpq9P87"/>
+                <img class="logotext" src="https://blog.flamingtext.com/blog/2017/11/04/flamingtext_com_1509783754_278322605.png" style="height: 63%;margin-left: 33%;"/>
+                
+                <img Title="profile settings" class="award" src="http://www.pvhc.net/img182/jbfkugwwyrhrwdagsvak.png"/>
+                <span id='id'></span>
+                <div class="btn-group btn-group-justified group">
+                    <!--<a onclick="switchPage('.add')" class="btn page">Add food</a>-->
+                    <a onclick="switchPage('.bmi')" class="btn page">BMI</a>
+                    <!--<a onclick="switchPage('.dietPlan')" class="btn page">Diet plan</a>-->
+                    <!--<a onclick="switchPage('.workOut')" class="btn page">Work out</a>-->
+                    <a onclick="switchPage('.calorieTracking')" class="btn page">Calorie tracking</a>
+                    <a onclick="switchPage('.report')" class="btn page">Report</a>
+                </div>
+            </div>
+            <div class="home">
+                <div class="part2">
+                    <div class="he">DESIGNED FOR WHOM?</div>
+                    <div class="hq">
+                        <div class="hg">This app is mainly designed for people who are too busy to go to a gym. All the</div>
+                        <div class="bg">exercises can be done <b>at home.</b>This app is also perfect for beginners.There are detailed
+                        instructions and video guide for each exercise.It will help you to make working out a habit,
+                        and you will come to love exercising.</div>
+                    </div>
+                    <div class="he">WHAT ARE THE BENEFITS?</div>                    <div class="hq">
+                        <div class="hg">The 30 day fitness challenge helps you <b>burn fat</b> build strong muscles,and stay in</div>
+                        <div class="bg">shape in just 30 days.What's more,you can improve your health quickly and efficiently
+                        in only a month.</div>
+                    </div>
+                    <div class="he">WHAT'S THE SCIENTIFIC BASIS?</div>
+                    <div class="hq">
+                        <div class="hg">According to the 30-day habit breaking theory from psycho-cybernetics by</div>
+                        <div class="bg">Maxwell Maltz, a person must have an accurate and positive view of his or her
+                        self before setting goals; Otherwise he or she will get stuck in a continuing pattern 
+                        of limiting beliefs.</div>
+                        <div class="hg">30 days may be the optimal time for making changes that influence your mental,</div>
+                        <div class="bg">physical and emotional state.you will see changes in your body and in your life.</div>
+                    </div>
+                    <div class="he">WHAT ARE THE HEALTH TIPS?</div>
+                    <div class="hq">
+                        <div class="hg">If you become ill, injured or pregnant, experience high blood pressure, or are </div>
+                        <div class="bg">unable to exercise due to yourpersonal physical condition,we suggest you stop to take the exercise.
+                        And please consuit your doctor for detailed information if you come back to exercise.</div>
+                        <div class="hg">We strongly suggest you warm up before exercising.We are not responsible</div>
+                        <div class="bg">for any injuries you sustain while exercising.</div>
+                    </div>
+                </div>
+                <div id="slide" style="width: 518px;m;float: right;m;">
+                    <img src="https://www.hdwallpapers.in/walls/dwayne_johnson_fitness_4k-HD.jpg" class="img">
+                    <img src="https://www.artsfon.com/pic/201511/1920x1080/artsfon.com-77097.jpg" class="hide img">
+                    <img src="https://ak4.picdn.net/shutterstock/videos/16797304/thumb/1.jpg" class="hide img">
+                    <img src="https://s-media-cache-ak0.pinimg.com/originals/c7/04/f3/c704f3e27f3c17739889168f9369ba73.jpg" class="hide img">
+                    <img src="http://ak2.picdn.net/shutterstock/videos/5798942/thumb/2.jpg" class="hide img">
+                    <img src="https://ak1.picdn.net/shutterstock/videos/31436161/thumb/1.jpg" class="hide img">
+                </div>
+                
+            </div>
+            <div class="personalDetails hide">
+                <div class="am">
+                    <div class="am1">Name: </div>
+                    <div class="am1">Phone number:</div>
+                    <div class="am1">Age:</div>
+                    <div class="am1">Weight(kg): </div>
+                    <div class="am1">Height(cm):</div>
+                    <div class="am1">city: </div>
+                </div>
+                <div class="am hi">
+                    <input type="text" class="form-control in" id="user"/>
+                    <input type="number" class="form-control in" id="phonea"/>
+                    <input type="number" class="form-control in" id="agea"/>
+                    <input type="number" class="form-control in" id="wei"/>
+                    <input type="number" class="form-control in" id="hei"/>
+                    <input type="text" class="form-control in" id="gen"/>
+                </div>
+                <input onclick="edit()" type="submit" class="btn btn-info btn-lg su " id="edit" value="Edit details">
+                <input onclick="check()" type="submit" class="btn btn-success btn-lg su hide" id="submit1" value="Submit">
+            </div>
+            <div class="bmi hide">
+                <div class="bmiw">HI!  <span id="uname"></span></div>
+                <div class="ui">
+                    <div class="resu">
+                        <div class="bmiv">Your BMI is <span id="bmi"></span></div>
+                        <div class="res" id="col"><p class="po">You are <span id="con"></span></p></div>
+                    </div>
+                    <div class='bmii'>
+                        <div style="text-align: center;background-color: cornflowerblue;padding-top: 10px;padding-bottom: 10px;font-size: 20px;">BMI -calculator</div>
+                        <p style="margin: 10px 0px 5px 20px;">weight:</p>
+                        <input class="weight1" style="margin: 5px 0px 10px 20px;"/>
+                        <p style="margin: 10px 0px 5px 20px;">height:</p>
+                        <input class="height1" style="margin: 5px 0px 10px 20px;"/>
+                        <br>
+                        <button id="manual" type="button" class="btn btn-secondary" style="margin: 5px 0px 10px 63px;">Submit</button>
+                        <span class="tbmi" style="font-size: 30px;float: right;margin: -110px 90px 0px 0px;">__._</span>
+                        <span class="tbmit" style="font-size: 20px;float: right;margin: -61px 100px 0px 20px;">bmi</span>
+                    </div>
+                    <!--<img class="bmii" src="https://static1.squarespace.com/static/52d6b182e4b02172ccaaae37/t/54a8669de4b0d6033e493877/1420322462223/BMI-TABLE.jpg"/>-->
+                </div>
+                <div class="low hide text">You are low weight gain your weight</div>
+                <div class="normal hide text">You are normal weight keep your weight as same</div>
+                <div class="high hide text">you are over weight let reduce your weight</div>
+                <div class="guess text">You must be in a weight range of <span id="low" style="color: black;"></span> to <span id="high" style="color: black;"></span></div>
+                
+            </div>
+            <div class="dietPlan hide">
+                <div class="head">Diet Chart for Weight Loss</div>
+                <div class="para">
+                    <div class="pa1">If we all had our way we would eat and eat and never get fat. But
+                    alas, that doesnot happen. As we age, our metabolism gets slower
+                    and we tend to put on weight. All of us aspire for a great looking
+                    body. While exercising plays a crucial role in weight loss, we need to
+                    follow a good diet chart too. An Indian diet chart for weight loss
+                    can be very impactful as it contains all the necessary food groups
+                    required for healthy sustenance.
+                    One can manage to lose weight by following the effective diet chart
+                    for weight loss, which has been put together by experts at fitness freak.
+                    </div>
+                    <div class="he1">What are the benefits of an Indian diet chart for weight loss?</div>
+                    <div class="pa1">An Indian, vegetarian diet chart for weight loss can be considered
+                    as a healthy option to shed the flab because of the following
+                    reasons -<br>
+                Plant-based foods not only provide one with lots of fiber but also
+                keep one feeling full and satiated for a long time.
+                This in turn, reduces the risk of heart diseases and also prevents
+                one from gaining weight.
+                It is also full of essential nutrients, proteins, vitamins, and minerals
+                like iron, calcium, zinc and more; needed for the proper functioning
+                of the body.
+                Going vegan or following a vegetarian diet chart for weight loss
+                aides in gradual but healthy shaping up of the body.
+                It also protects the body from diseases like diabetes, blood
+                pressure, arthritis, cancer, renal diseases, osteoporosis, dementia,
+                gallstone, and more.
+                It reduces the risk of allergies and also improves the skin and
+                overall health gradually.
+                Also, a typical Indian diet plan offers one a mix of exotic spices that
+                add to the taste as well as overall health of the body.</div>
+                </div>
+                <div class="menu">
+                    <div class="he1">Vegetarian diet chart for weight loss</div>
+                    <div class="pa1">Given below is a diet plan that offers you several food choices that you can
+                    alter and change as per your taste, preference, ease of making, and the
+                    resources available. If followed diligently, this is a great diet chart for
+                    weight loss that offers several combinations that you can try to avoid
+                    monotonous food every day.</div>
+                    <div class="he2">Early morning (6 am)</div>
+                    <div class="pic a"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/lemon-water-honey.png"/>Lemon water with a dash of honey to eliminate body toxins</div>
+                    <div class="he2">Breakfast (9 am)</div>
+                    <div class="pic b"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-weight-loss/brown-bread.png"/>Brown bread toasts - 3 slices</div>
+                    <div class="pic c"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-weight-loss/cereal-nut-raisins.png"/>Cereal with nuts and raisins - 1 bowl</div>
+                    <div class="pic d"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-weight-loss/vermicelli.png"/>Vegetable vermicelli - 1 bowl</div>
+                    <div class="pic e"><img class="food" src="http://www.98fit.com/blog/wp-content/uploads/2017/09/safe_image-14-1.jpeg"/>Green tea - 1 cup</div>
+                    <div class="pic f"><img class="food" src="http://www.98fit.com/blog/wp-content/uploads/2017/09/safe_image-12-1.jpeg"/>Any fruit of choice - 1</div>
+                    <div class="he2">Lunch (1 pm)</div>
+                    <div class="pic b"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-weight-loss/brown-rice-tofu.png"/>Brown rice with tofu and grilled tomatoes</div>
+                    <div class="pic c"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-weight-loss/rice-veg-dal.png"/>Rice with dal and cooked vegetables</div>
+                    <div class="pic d"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-weight-loss/pumpkin-gravy.png"/>Pumpkin gravy</div>
+                    <div class="pic e"><img class="food" src="http://www.98fit.com/blog/wp-content/uploads/2017/06/safe_image-14.jpeg"/>Pita bread with hummus</div>
+                    <div class="pic f"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-weight-loss/indian-salad.png"/>Salad</div>
+                    <h4 class="he2">Evening Snack (4 pm)</h4>
+                    <div class="pic b"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-weight-loss/veg-brown-bread-sandwich.png"/>Vegetable brown bread sandwich</div>
+                    <div class="pic c"><img class="food" src="http://www.98fit.com/blog/wp-content/uploads/2017/09/safe_image-12-1.jpeg"/>Fruit salad – 1 bowl</div>
+                    <div class="pic d"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-weight-loss/corn-salad.png"/>Corn salad – 1 bowl</div>
+                    <div class="pic e"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-losing-fat/vegetable-soup.png"/>Vegetable soup – 1 bowl</div>
+                    <div class="pic f"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/puffed-rice-snack.png"/>Puffed rice snack</div>
+                    <h4 class="he2">Dinner (8 pm)</h4>
+                    <div class="pic b"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-weight-loss/upma.png"/>Upma – 1 plate</div>
+                    <div class="pic c"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/dal-2-rotis.png"/>Chapattis - 2</div>
+                    <div class="pic d"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-losing-fat/mixed-vegetables.png"/>Vegetable dalia – 1 bowl</div>
+                    <div class="pic e"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-weight-loss/cheese-cutlet.png"/>Vegetable and cheese cutlets – 2</div>
+                    <div class="pic f"><img class="food" src="https://s3-ap-southeast-1.amazonaws.com/98fitasset/articles/diet-plan-losing-fat/vegetable-raita.png"/>Salad with yoghurt dressing – 1 bowl</div>
+                </div>
+                <div class="tip">
+                    <div class="tip1">Tips</div>
+                    <div class="do">
+                        <h2 class="doq gr">Do's</h2>
+                        <p class="dos"><b>Ensure a well-planned diet:</b> One has to make sure that the diet is well<br> planned in advance and all ingredients are available at hand to ensure that<br> the body gets the recommended food, on time, and in the right quantity.<br><br>
+                        <b>Take supplements:</b> A vegetarian diet can sometimes lack vitamin B12 and<br> to fortify the need of vitamin B12, one can take supplements along with the<br> diet plan.<br><br>
+                        <b>Cover all food groups:</b> To have a balanced diet food groups that one<br> should include in the meal plan are as mentioned below.<br><br>
+                        <b>Fruits and Vegetables:</b> 5 servings of fruits and vegetables per day ensure<br> that the body gets its requirements of proteins, minerals and vitamins.<br> They are good sources of fiber, nutrients and antioxidants and are quite<br> effective in weight loss. For effective weight loss, one should opt for fruits<br> and vegetables with higher water content. Another important tip to keep in<br> mind is to eat maximum colors of fruits and vegetables to ensure that one<br> gets all the essential nutrients.<br><br>
+                        <b>Cereals and Grains:</b> Cereals and grains provide you with good carbs and<br> good quantities of iron and zinc. They are necessary for the healthy<br> functioning of the body and in providing energy.<br><br>
+                        <b>Nuts, Seeds and Legumes:</b> Legumes like chickpeas, lentils, beans, etc. are<br> good sources of carbs, iron and healthy fats. They help in reducing<br> cholesterol and provide the body with omega – 3 fatty acids.<br><br>
+                        <b>Dairy and Soya products:</b> All milk products are rich sources of calcium and<br> protein. One can take the fat free or the skimmed versions to aide in weight<br> loss. If one is on a vegan diet, then soya options are available too.<br><br>
+                        <b>Fat:</b> Unsaturated fats found in nuts and some other foods are essential in<br> the body as they help in lubrication of joints and making movements easier.<br><br></p>
+                    </div>
+                    <div class="do">
+                        <h2 class="doq rd">Don'ts</h2>
+                        <p class="dos">Avoid non-vegetarian food in this plan and keep it purely vegetarian, as<br> saturated fat found in meat-based food is harmful for the body<br><br>
+                        Avoid skipping meals and snack times as the plan focuses on small<br> portion sizes. Skipping meals can lead to acidity or weakness<br><br>
+                        Do not have over spicy food high on red chilly and oils to keep your<br> digestive system healthy<br><br>
+                        Avoid heavy desserts and ice creams<br><br>
+                        Keep away from tea other than green tea; and that too just once a day<br><br>
+                        Do not over indulge and consume bigger than recommended portions just<br> because it is your favorite food and it features in the diet chart<br><br>
+                        Avoid the urge of last minute fast food pick ups, ready to eat meals, or<br> short-cut foods as they are rich in preservatives. They also contain<br> ingredients that are not as fresh as home cooked food. Prepare your meals<br> fresh and just before you have to have them so that you derive maximum<br> benefits<br><br>
+                        Do not give in to the urge to cheat on the diet today and cover up by<br> starving the next day. It never works<br><br></p>
+                    </div>
+                </div>
+            </div>
+            <div class="workOut hide">
+                <div class="cata">
+                <div onclick="exer('.fbw')" class="wou a1"><img class="wout" src="https://www.bodybuilding.com/images/2016/july/the-ultimate-beginners-full-body-workout-v2-4-700xh.jpg"/><br>full body workout</div>
+                <div onclick="exer('.abw')" class="wou a2"><img class="wout" src="data:image/jpeg;base64,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"/><br>abs workout</div>
+                <div onclick="exer('.biw')" class="wou a3"><img class="wout" src="http://www.lepfitness.co.uk/wp-content/uploads/2017/02/backbiceps_a.jpg"/><br>biceps workout</div>
+                <div onclick="exer('.arw')" class="wou a4"><img class="wout" src="https://gymjunkies.com/wp-content/uploads/2015/11/shutterstock_81248260.jpg"/><br>arm workout</div>
+                <div onclick="exer('.lew')" class="wou a5"><img class="wout" src="https://fitnesspro.ir/wp-content/uploads/5-tip-for-leg-day-workout.jpg"/><br>leg workout</div>
+                </div>
+                <div class="fbw hide">
+                    <img onclick="back()" class="back" src="https://cdn3.iconfinder.com/data/icons/3d-printing-icon-set/512/Undo.png"/>
+                    <div class="wou a1"><img class="wout" src="http://greatist.com/sites/default/files/ResistedPushUps_0.gif"/>Resistance Band Workout</div>
+                    <div class="wou a2"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/BODYWEIGHT-MOVES_DONKEY-KICKS_GRAIN.gif?itok=AsgWg7m2"/>Donkey Kick</div>
+                    <div class="wou a3"><img class="wout" src="http://greatist.com/sites/default/files/KettlebellHighPutll.gif"/>Kettlebell Workout</div>
+                    <div class="wou a4"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/STANDING-ABS_MARCH-WITH-TWIST_1.gif?itok=M6zE_iyh"/>March With Twist</div>
+                    <div class="wou a5"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/ChaturangaPlank_GIF.gif?itok=2tc3DXUT"/>Intermediate Planks</div>
+                </div>
+                <div class="abw hide">
+                    <img onclick="back()" class="back" src="https://cdn3.iconfinder.com/data/icons/3d-printing-icon-set/512/Undo.png"/>
+                    <div class="wou a1"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/STANDING-ABS_WIDE-SECOND-SIDE-CRUNCH-WITH-WEIGHT_0.gif?itok=oQwXv9iE"/> Wide Second Side Crunch</div>
+                    <div class="wou a2"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/STANDING-ABS_REVERSE-MED-BALL-CHOP_0.gif?itok=84ksDaIh"/>Reverse Chop</div>
+                    <div class="wou a3"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/TABATA_RUSSIAN-ABS-TWIST.gif?itok=ih5F7uVW"/>Russian Abs Twist</div>
+                    <div class="wou a4"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/FOAM-ROLLING_WALKING-PLANK.gif?itok=mV_5Dhmi"/> Plank Walk</div>
+                    <div class="wou a5"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/GREATIST_FITNESS_BOXING_STRENGTH_GIRL_C_RUSSIANTWISTS.gif?itok=NZ1Ka_yk"/>Reverse Oblique Crunch</div>
+                </div>
+                <div class="biw hide">
+                    <img onclick="back()" class="back" src="https://cdn3.iconfinder.com/data/icons/3d-printing-icon-set/512/Undo.png"/>
+                    <div class="wou a1"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/PLYO_REVERSE-LUNGE-WITH-KNEE-UP.gif?itok=JFysESGs"/>Plyometric Moves for Strength and Speed </div>
+                    <div class="wou a2"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/arm-hold_NEW.gif?itok=E6yyuBYP"/>reps</div>
+                    <div class="wou a3"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/Superman_New.gif?itok=KcZ82dr4"/>Dorm Room Workout</div>
+                    <div class="wou a4"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/PIKES.gif?itok=zrUdnUys"/>Pike</div>
+                    <div class="wou a5"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/PILATES-UPDATE_PILATES-CURL.gif?itok=TSW0-PwS"/>Hamstring Curl</div>
+                </div>
+                <div class="arw hide">
+                    <img onclick="back()" class="back" src="https://cdn3.iconfinder.com/data/icons/3d-printing-icon-set/512/Undo.png"/>
+                    <div class="wou a1"><img class="wout" src="http://greatist.com/sites/default/files/SingleArmDumbbellSnatch.gif"/>Single-Arm Dumbbell Snatch</div>
+                    <div class="wou a2"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/FOAM-ROLLING_AIRPLANE-DELTS.gif?itok=m2lC75VY"/>Airplane</div>
+                    <div class="wou a3"><img class="wout" src="http://greatist.com/sites/default/files/DumbbellFloorPress.gif"/>Chest and Back</div>
+                    <div class="wou a4"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/SHOULDER-ROTATION_0.gif?itok=g-KQPCqn"/>Shoulder Rotation</div>
+                    <div class="wou a5"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/AlternatingWaves.gif?itok=CZc1YEvY"/>Alternating Wave Lunge Jump</div>
+                </div>
+                <div class="lew hide">
+                    <img onclick="back()" class="back" src="https://cdn3.iconfinder.com/data/icons/3d-printing-icon-set/512/Undo.png"/>
+                    <div class="wou a1"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/PLYO_PUSH-UP.gif?itok=kitg9scr"/>Plyometric Moves for Strength and Speed</div>
+                    <div class="wou a2"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/PILATES-UPDATE_DOUBLE-LEG-STRAIGHT-STRETCH.gif?itok=6WwvPyES"/>Double-Leg Stretch</div>
+                    <div class="wou a3"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/SKATER.gif?itok=SAAZiK5T"/>Skaters</div>
+                    <div class="wou a4"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/LOWER-ABS_SCISSORS.gif?itok=8liIK1yk"/>Scissors</div>
+                    <div class="wou a5"><img class="wout" src="https://greatist.com/sites/default/files/styles/article_main/public/PILATES-UPDATE_SINGLE-STRAIGHT-LEG-STRETCH.gif?itok=_0nfv30j"/>Single Straight-Leg Stretch</div>
+                </div>
+                
+            </div>
+            <div class="calorieTracking hide">
+                <div class="gro" style="width: 100%;height: 100%;">
+                    <h1 id="head" class="hide cal">Over all you have eat <span id="calo"></span> calories</h1>
+                    <div id='input'>
+                        <div id='box'>
+                            <div style="height: 99px;width: 996px;margin-right: 0px;float: left">
+                                <label for="qu" style="margin-left: 36%;float: left;margin-top: 70px;margin-bottom: 0px;" id='label'>Food:</label>
+                                <input list="tiffin" name="tiffin" class="tifv" style="float: left;margin-left: 15px;margin-top: 70px;">
+                                <datalist id="tiffin"></datalist>
+                                <label for="qu" style="float: left;margin-left: 110px;margin-top: 70px;margin-bottom: 0px;">Quantity:</label>
+                                <input type="number"  class="quan tifq" style="float: left;margin-left: 15px;margin-top: 70px;">
+                            </div>
+                        </div>
+                        <div style="float: right;background-image: url(https://maxcdn.icons8.com/Share/icon/ultraviolet/Very_Basic//plus1600.png);height: 50px;background-repeat: no-repeat;w;width: 50px;background-size: 100% 100%;margin-right: 17%;margin-top: 55px;" id="plus"></div>
+                    </div>
+                    <div id='input1'></div>
+                    <button onclick="calculate()" type="button" class="btn btn-primary" style="margin-left: 48%;margin-top: 30px;">Submit</button>
+                </div>
+            </div>
+            <div class="report hide">
+                
+                <div id="chartContainer" style="height: 370px; width: 100%;margin-top: 50px;"></div>
+                
+            </div>
+            <div class="add hide">
+                <div class="afood">Food:<input type="text" name="food" id="food" placeholder="Enter food"><br><br></div>
+                <div class="calorie">Calorie:<input type="number" name="calorie" id="calorie" placeholder="Enter this calorie"><br><br></div>
+                <button type="button" class='submit1 btn btn-default' onclick="addfo()">Submit</button>
+            </div>
+            <div class="change hide">
+                <div class="pass">Password:<input type="password" name="password" id="pass" placeholder="Enter current password"><br><br></div>
+                <div class="nepa">New password:<input type="password" name="new password" id="newpass" placeholder="Enter new password"><br><br></div>
+                <div class="repa">Reenter New password:<input type="password" name="new password" id="repass" placeholder="Reenter new password"><br><br></div>
+                <button type="button" class='submit1 btn btn-default' onclick="change(val)">Submit</button>
+            </div>
+        </div>
+        
+        <script>
+            $(".infor").addClass("hide");
+            $(".main").css("opacity", "1");
+            var cookie;
+            var date= new Date();
+            var data;
+            var val;
+            var food;
+            var position = 0;
+            var month=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+            var pageName=[".home",".personalDetails",".bmi",".dietPlan",".workOut",".calorieTracking",".report",'.add','.change'];
+            var mes=["please enter personalDetails first","data added sucessfully","data deleted","let edit your data","Dish not in list please add that","Please enter a quantity dish","food added sucessfully"];
+            var ex=["fbw","abw","biw","arw","lew"];
+            load();
+            sendRequest();
+            graph1()
+            slideShow()
+            
+            
+            function slideShow() {
+                var img = document.getElementsByClassName("img");
+                for (i = 0; i < img.length; i++) {
+                    img[i].classList.add("hide");
+                }
+                position++;
+                if (position >= img.length) {
+                    position = 0;
+                }
+                img[position].classList.remove("hide");
+                setTimeout(slideShow, 5000);
+            }
+            
+            function load(){
+                cookie=document.cookie;
+                $.post("/load",cookie,
+                function(data,status){
+                    val=JSON.parse(JSON.parse(data));
+                    if(val.weight==undefined){
+                        $(".infor").removeClass("hide");
+                        $(".main").css("opacity", "0.5");
+                    }
+                    else{
+                        var id=['#user','#phonea','#agea','#wei','#hei','#gen'];
+                        var tab=['Name','phone','age','weight','height','city'];
+                        for(i=0;i<6;i++){
+                            $(id[i]).prop('disabled', true).val(val[tab[i]]);
+                        }
+                        $("#calo").html(val.calorie);
+                        $("#id").html(val.nickname);
+                    }
+                });
+            }
+            
+            $("#personSubmit").click(function(){
+                var nickname=$("#nick").val();
+                var phone=$("#phone").val();
+                var age=$("#age").val();
+                var height=$("#height").val();
+                var weight=$("#weight").val();
+                var city=$("#city").val();
+                var value=['nickname','phone','age','height','weight','city'];
+                var data="";
+                if(/[a-z0-9 ]{2,}/gi.test(nickname)){
+                    if(/^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/g.test(phone)){
+                        if(/[0-9]{1,3}/g.test(age)){
+                            if(/[0-9]{2,3}/g.test(height)){
+                                if(/[0-9]{1,3}/g.test(weight)){
+                                    if(/[a-z ]{3,}/gi.test(city)){
+                                        for(i=0;i<value.length;i++){
+                                            data+=value[i]+'='+eval(value[i])+"&";
+                                        }
+                                        data=data.slice(0, length-1);
+                                        console.log(data)
+                                        $.post("/dataAdd",data,function(data,status){
+                                            $(".alert1").text(data);
+                                            $(".alert1").removeClass("hide");
+                                            setTimeout(myFunction, 3000);
+                                        });
+                                        $(".infor").addClass("hide");
+                                        $(".main").css("opacity", "1");
+                                    }
+                                    else{
+                                        $(".alert1").text("city name must be in alphabet 3 or more characters");
+                                        $(".alert1").removeClass("hide");
+                                        setTimeout(myFunction, 3000);
+                                    }
+                                }
+                                else{
+                                    $(".alert1").text("weight is must be in whole number in kgs");
+                                    $(".alert1").removeClass("hide");
+                                    setTimeout(myFunction, 3000);
+                                }
+                            }
+                            else{
+                                $(".alert1").text("height is must be whole number in cms");
+                                $(".alert1").removeClass("hide");
+                                setTimeout(myFunction, 3000);
+                            }
+                        }
+                        else{
+                            $(".alert1").text("age must be 1 to 3 digits");
+                            $(".alert1").removeClass("hide");
+                            setTimeout(myFunction, 3000);
+                        }
+                    }
+                    else{
+                        $(".alert1").text("enter vaild indian mobile number");
+                        $(".alert1").removeClass("hide");
+                        setTimeout(myFunction, 3000);
+                    }
+                }
+                else{
+                    $(".alert1").text("nick name must contain 2 or more alphabet and numbers only");
+                    $(".alert1").removeClass("hide");
+                    setTimeout(myFunction, 3000);
+                }
+            });
+            
+            $(".award").click(function(){
+                $(".profile").removeClass("hide");
+                event.stopPropagation();
+            });
+            
+            $("body").click(function(){
+                $(".profile").addClass("hide");
+             });
+             
+            function project(){
+                var cookies = document.cookie.split(";");
+                  for (var i = 0; i < cookies.length; i++){
+                    setCookie(cookies[i].split("=")[0]);
+                  }
+                function setCookie(name) {
+                    document.cookie = name+'=; path=/; domain=.vigneshwaranp-9556.zcodeusers.com; expires=' + new Date(0).toUTCString();
+                }
+                $(".alert1").text("signout sucessfully");
+                $(".alert1").removeClass("hide");
+                document.cookie = "Email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                setTimeout(myFunction, 3000);
+                location.href="/";
+            }
+            
+            function delete1(){
+                $.post("/delete"
+                ,function(data, status){
+                    $(".alert1").text(data);
+                    $(".alert1").removeClass("hide");
+                    document.cookie = "Email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    setTimeout(myFunction, 3000);
+                    location.href="/";
+                });
+            }
+            
+            function addfo(){
+                var fooda=$("#food").val();
+                var calorie=$("#calorie").val();
+                if(/[a-zA-Z]+/g.test(fooda)&& /[0-9]+/g.test(calorie)){
+                    $("#food,#calorie").val("");
+                    $.post("/addfood","food="+fooda+"&calorie="+calorie
+                    ,function(data, status){
+                        $(".alert1").text(data);
+                        $(".alert1").removeClass("hide");
+                        setTimeout(myFunction, 3000);
+                        location.href="/fitness";
+                    });
+                }
+                else{
+                    $(".alert1").text("enter data correctly");
+                    $(".alert1").removeClass("hide");
+                    setTimeout(myFunction, 3000);
+                }
+            }
+            
+            function switchPage(page){
+                $("#input1").html("");
+                for(i=0;i<pageName.length;i++){
+                    $(pageName[i]).addClass("hide");
+                    if(i<6){
+                        $(ex[i]).addClass("hide");
+                    }
+                }
+                $('.cata').removeClass("hide");
+                $(page).removeClass("hide");
+                $("#uname").html(val.nickname);
+                $(".in").prop("disabled",true);
+                $("#calo").html(val.calorie);
+                $(".tbmi").html('__._');
+                $(".tbmit").html("bmi");
+                bmi();
+                load();
+            }
+            
+            function change(val){
+                if(val.Password==$('#pass').val()){
+                    if(/^.{6,}$/g.test($('#newpass').val())){
+                        if($('#newpass').val()==$('#repass').val()){
+                            var value="Password="+$('#newpass').val();
+                            $(".alert1").text("password change sucessful");
+                            $(".alert1").removeClass("hide");
+                            setTimeout(myFunction, 3000);
+                            sendrequest(value);
+                        }
+                        else{
+                            $(".alert1").text("new password mismatch");
+                            $(".alert1").removeClass("hide");
+                            setTimeout(myFunction, 3000);
+                        }
+                    }
+                    else{
+                        $(".alert1").text("password must be 6 or above characters");
+                        $(".alert1").removeClass("hide");
+                        setTimeout(myFunction, 3000);
+                    }
+                }
+                else{
+                    $(".alert1").text("Enter current password correctly");
+                    $(".alert1").removeClass("hide");
+                    setTimeout(myFunction, 3000);
+                }
+            }
+            
+            function check(){
+                var input=document.getElementsByClassName("in");
+                var pattern=[/^[a-zA-z. ]{3,}$/g,/^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/g,/[0-9]{1,3}/g,/[0-9]{1,3}/g,/[0-9]{2,3}/g,/[a-z ]{3,}/gi];
+                var treu=[];
+                for(i=0;i<input.length;i++){
+                    var value=input[i].value;
+                    var patt=pattern[i];
+                    var ans=patt.test(value);
+                    if(ans===true){
+                        treu.push(ans);
+                    }
+                    if(ans===false){
+                        input[i].value = "";
+                        input[i].placeholder = "Enter correct value";
+                    }
+                }
+                if(treu.length==6){
+                    submit(input);
+                }
+            }
+            
+            function submit(input){
+                $("#edit").removeClass("hide");
+                $("#submit1").addClass("hide");
+                var infor="";
+		        var delugename=['Name','phone','age','weight','height','city'];
+                for(i=0;i<input.length;i++){
+                    infor+=delugename[i]+'='+input[i].value+'&';
+                    input[i].disabled = true;
+                    input[i].placeholder = "";
+                }
+		        infor=infor.slice(0, length-1);
+		        sendrequest(infor);
+		        $(".alert1").text(mes[1]);
+                $(".alert1").removeClass("hide");
+                setTimeout(myFunction, 3000);
+                load()
+            }
+            
+            function sendrequest(infor){
+                $.post("/add",infor
+                ,function(data, status){
+                    $('#pass,#newpass,#repass').val("");
+                    location.href="/fitness";
+                });
+            }
+            
+            function edit(){
+                $(".in").prop("disabled",false);
+                $("#submit1").removeClass("hide");
+                $("#edit").addClass("hide");
+                $(".alert1").text(mes[3]);
+                $(".alert1").removeClass("hide");
+                setTimeout(myFunction, 3000);
+            }
+            
+            $("#manual").click(function(){
+                var ans=($(".weight1").val()/(Math.pow(($(".height1").val()/100),2))).toFixed(1);
+                $(".tbmi").html(ans);
+                if(ans<18.5){
+                    $(".tbmit").html('under weight');
+                }
+                else if(ans<25){
+                    $(".tbmit").html('normal weight');
+                }
+                else{
+                    $(".tbmit").html('over weight');
+                }
+                $(".weight1,.height1").val("")
+            });
+            
+            function bmi(){
+                var weight=val.weight;
+                var height=(Math.pow((val.height/100),2));
+                var condition;
+                var bmi=(weight/height).toFixed(1);
+                $("#bmi").html(""+bmi);
+                if(bmi<18.5){
+                    condition="Under weight";
+                    $("#con").html(condition);
+                    $("#col").css("background-color","lightblue");
+                }
+                else if(bmi>=18.5 &&bmi<25){
+                    condition="Normal weight";
+                    $("#con").html(condition);
+                    $("#col").css("background-color","#93b00d");
+                }
+                else if(bmi>=25 &&bmi<30){
+                    condition="Over weight";
+                    $("#con").html(condition);
+                    $("#col").css("background-color","yellow");
+                }
+                else if(bmi>=30 &&bmi<35){
+                    condition="Obesity-I";
+                    $("#con").html(condition);
+                    $("#col").css("background-color","orange");
+                }
+                else if(bmi>=35 &&bmi<40){
+                    condition="Obesity-II";
+                    $("#con").html(condition);
+                    $("#col").css("background-color","Brown");
+                }
+                else if(bmi>=40){
+                    condition="Extreme Obesity";
+                    $("#con").html(condition);
+                    $("#col").css("background-color","red");
+                }
+                correct(bmi,height)
+            }
+            
+            function correct(bmi,height){
+                if(bmi<18.5){
+                    $("#low").html(Math.round(Number(height)*19));
+                    $("#high").html(Math.round(Number(height)*25));
+                    $('.low').removeClass("hide");
+                }
+                else if(bmi<25){
+                    $(".guess").addClass("hide");
+                    $('.normal').removeClass("hide");
+                }
+                else{
+                    $("#low").html(Math.round(Number(height)*19));
+                    $("#high").html(Math.round(Number(height)*25));
+                    $('.high').removeClass("hide");
+                }
+            }
+            
+            function exer(cat){
+                $(".cata").addClass("hide");
+                for(i=0;i<ex.length;i++){
+                    $(ex[i]).addClass("hide");
+                }
+                $(cat).removeClass("hide");
+            }
+            
+            function back(){
+                for(i=0;i<ex.length;i++){
+                    $(ex[i]).addClass("hide");
+                }
+                $(".cata").removeClass("hide");
+            }
+            
+            // //function search(food){
+            // $(".tifv").keyup(function(){
+            //     alert('gh')
+            //     $("#tiffin").html("");
+            //     var name=$(".tifv").val()
+            //     var data={"appId":"f805cbc0",
+            //         "appKey":"d90eb7d280f3e0e51604fcdfaadb42d3",   
+            //         "query":name,
+            //         "fields":["item_name","nf_calories","nf_serving_size_qty","nf_serving_size_unit"],
+            //         "sort":{
+            //             "field":"_score",
+            //             "order":"desc"
+            //         },
+            //         "filters":{
+            //             "item_type":2
+            //         }
+            //     }
+            //       $.ajax({
+            //         url: "https://api.nutritionix.com/v1_1/search",
+            //         type: "POST",
+            //         crossDomain: true,
+            //         data: data,
+            //         dataType: "json",
+            //         success:function(result){
+            //           var a=result.hits;
+            //           for(i=0;i<a.length;i++){
+            //             var val=a[i].fields.item_name;
+            //             var newOption = $('<option>'+val+'</option>');
+            //             $('#tiffin').append(newOption);
+            //           }
+            //         },error:function(xhr,status,error){
+            //           alert(status);
+            //         }
+            //       });
+            //     // for(i=0;i<food.length;i++){
+            //     //     $('#tiffin').append('<option>'+food[i].food+'</option>');
+            //     // }
+            // });
+            
+            function search(food){
+                $("#tiffin").html("");
+                for(i=0;i<food.length;i++){
+                    $('#tiffin').append('<option>'+food[i].food+'</option>');
+                }
+            }
+            
+            function calculate(){
+                var dish=[];
+                var count=[];
+                var calorie2=0;
+                $('.tifv').each(function() {
+                    dish.push($(this).val());
+                });
+                $('.tifq').each(function() {
+                    if(/^[0-9]{0,}$/g.test($(this).val())){
+                        count.push($(this).val());
+                    }
+                    else{
+                        $(".alert1").text(mes[4]);
+                        $(".alert1").removeClass("hide");
+                        setTimeout(myFunction, 3000);
+                        return;
+                    }
+                });
+                for(j=0;j<dish.length;j++){
+                    for(i=0;i<food.length;i++){
+                        if(food[i].food==dish[j]){
+                            calorie2=calorie2+(food[i].calorie*count[j]);
+                        }
+                    }
+                }
+                var day=date.getDate();
+                if(day.toString().length < 2){
+                    day= "0"+day;
+                }
+                    
+                var d=day+"-"+month[date.getMonth()+1]+"-"+date.getFullYear();
+                var calorie=Number(val.calorie)+Number(calorie2);
+                if (isNaN(calorie)) {
+                    $(".alert1").text(mes[4]);
+                    $(".alert1").removeClass("hide");
+                    setTimeout(myFunction, 3000);
+                }
+                else if(calorie==0){
+                    $(".alert1").text(mes[5]);
+                    $(".alert1").removeClass("hide");
+                    setTimeout(myFunction, 3000);
+                }
+                else{
+                    caloriea(calorie);
+                    daily(d,calorie2);
+                    //$("#head").removeClass("hide");
+                    $(".alert1").text(mes[6]);
+                    $(".alert1").removeClass("hide");
+                    setTimeout(myFunction, 3000);
+                    $('#input1').remove();
+                    $('.tifv,.tifq').val("");
+                }
+            }
+            
+            function graph1() {
+                $.get("/graph?", function(data, status){
+                    if(data!='data'){
+                        graph=JSON.parse(data);
+                        draw(graph)
+                    }
+                    
+                });
+            }
+            
+            function daily(date,calorie){
+                $.post("/add1",date+"="+calorie
+                ,function(data, status){
+                    graph1()
+                });
+            }
+            
+            function caloriea(calorie1){
+                $.post("/add","calorie="+calorie1
+                ,function(data,status){
+                    load()
+                });
+            }
+            
+            function myFunction() {
+                $(".alert1").addClass("hide");
+            }
+            
+            function sendRequest() {
+                $.get("/get?Id!=0", function(data, status){
+                    food=JSON.parse(data);
+                    search(food);
+                });
+            }
+            
+            function draw(graph){
+                console.log(graph)
+                var data=[];
+                var x=Object.keys(graph);
+                var y=Object.values(graph);
+                //Object.keys(graph).length;
+                for(i=0;i<Object.keys(graph).length;i++){
+                    data[i]={"x":new Date(x[i]),"y":Number(y[i])}
+                }
+                console.log(data)
+                // for(i=0;i<graph.length;i++){
+                //     var a;
+                //     delete graph[i].ID;
+                //     delete graph[i].Email;
+                //     graph[i]['x']=graph[i]['Date_field'];
+                //     graph[i]['y']=graph[i]['calorie'];
+                //     delete graph[i]['Date_field'];
+                //     delete graph[i]['calorie'];
+                //     d=graph[i]['x'];
+                //     a=d.split("-");
+                //     d=a[2]+'-'+month.indexOf(a[1])+'-'+a[0];
+                //     graph[i]['x']=new Date(d);
+                // }
+                 var chart = new CanvasJS.Chart("chartContainer", {
+                	animationEnabled: true,
+                	theme: "light2",
+                	title:{
+                		text: "Your calorie chart"
+                	},
+                	axisY:{
+                		includeZero: false
+                	},
+                	data: [{        
+                		type: "line",       
+                		dataPoints: data
+                	}]
+                });
+                chart.render();
+                
+            }
+            
+            $("#plus").click(function(){
+                $("#input1").append($("#box").html());
+                $("#input1").append($("<div class='minus' onclick=minus(this)></div>"));
+            });
+            
+            function minus(a){
+                $(a).prev().remove();
+                $(a).remove();
+            }
+        </script>
+    </body>
+</html>

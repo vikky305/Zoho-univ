@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        #div1 {
+            height: 100px;
+            width: 100px;
+            background-color: #0000ff;
+        }
+
+        #div2 {
+            height: 100px;
+            width: 100px;
+            background-color: #00ff00;
+        }
+
+        #div3 {
+            height: 100px;
+            width: 100px;
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <button>click here to fade colors</button><br>
+    <div id=div1></div><br>
+    <div id=div2></div><br>
+    <div id=div3></div><br>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("#div1").fadeToggle(2000);
+                $("#div2").fadeToggle(4000);
+                $("#div3").fadeToggle(6000);
+            });
+        });
+    </script>
+</body>
+
+</html>

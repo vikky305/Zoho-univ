@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Digital Clock</title>
+    <link rel="icon" href="../images/clock.png">
+    <style>
+        body {
+            padding-bottom: 0px;
+            background-color: antiquewhite;
+            color: red;
+            font-family: cursive;
+            font-size: 17px;
+            overflow: hidden;
+        }
+
+        select {
+            padding: 5px;
+            margin: 3px;
+            border-radius: 10px;
+            box-shadow: 0 3px 0 #ccc, 0 -1px #fff;
+            background: aliceblue;
+            color: black;
+            border: groove;
+            display: inline-block;
+            cursor: text;
+            outline: none;
+        }
+
+        input,
+        button {
+            width: 120px;
+            background: #3e9cbf;
+            padding: 4px 10px 10px;
+            border: 1px solid #3e9cbf;
+            cursor: pointer;
+            font-size: 20px;
+            font-family: Comic Sans MS, sans-serif;
+            text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+            border-radius: 10px;
+            outline: none;
+        }
+
+        input:hover,
+        input:focus,
+        button:hover,
+        button:focus {
+            color: #dfe7ea;
+            box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+        }
+
+        button {
+            width: 250px;
+        }
+
+        #area {
+            width: 100%;
+            font-size: 120px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-weight: bold;
+            color: chocolate;
+        }
+
+        #user {
+            float: left;
+            width: 50%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-top: 5px;
+        }
+
+        .p {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .low {
+            font-size: 20px;
+        }
+
+        .stopwatch_on {
+            float: left;
+            height: 25px;
+            width: 15%;
+            background-color: red;
+            color: white;
+            text-align: center;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .stopwatch_reset {
+            float: left;
+            height: 25px;
+            width: 15%;
+            background-color: red;
+            color: white;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .stopwatch_off {
+            float: left;
+            height: 25px;
+            width: 15%;
+            background-color: red;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div id="area">
+            <div class="p"><span id="hours">00</span><br/><span class="low"><i>HOURS</i></span></div>
+            <div class="p"><span id="separator1">:</span></div>
+            <div class="p"><span id="minutes">00</span><br/><span class="low"><i>MINUTES</i></span></div>
+            <div class="p"><span id="separator2">:</span></div>
+            <div class="p"><span id="seconds">00</span><br/><span class="low"><i>SECONDS</i></span></div>
+            <div class="p"><span id="am_pm">am</span></div>
+        </div>
+    </center>
+    <div class="stopwatch_on" onclick="stopwatch()">Stop watch on</div>
+    <div class="stopwatch_off hide" onclick="stopwatchpp()">Stop watch stop</div>
+    <div class="stopwatch_off hide" onclick="stopwatchppp()">Stop watch start</div>
+    <div id="user">
+        <center>
+            <h3>Set Custom Time</h3>
+            <form onsubmit="setTime();return false;">
+                <label>
+                        <select id="Hours" required>
+		                    <option value="">Hours</option>
+		                </select>
+		            </label>
+                <label>
+		                <select id="Minutes" required>
+		                    <option value="">Minutes</option>
+		                </select>
+                    </label>
+                <label>
+		                <select id="Seconds" required>
+		                    <option value="">Seconds</option>
+		                </select>
+                    </label>
+                <br/><br/>
+                <input type="submit" value="Set Time" />
+            </form>
+            <br/><br/>
+            <button onclick="reset()">Reset Current Timer</button>
+        </center>
+    </div>
+    <div class="stopwatch_reset hide" onclick="sw_reset()">Stop watch reset</div>
+
+    <script>
+        create('Hours', 24);
+        create('Minutes', 60);
+        create('Seconds', 60);
+        reset();
+
+        var hourDiv = document.getElementById("hours");
+        var minuteDiv = document.getElementById("minutes");
+        var secondDiv = document.getElementById("seconds");
+        var noonDiv = document.getElementById("am_pm");
+        var fun = setInterval(tickTock, 1000);
+
+        function reset() {
+            document.getElementById("am_pm").classList.remove("hide");
+            day = new Date();
+            hour = day.getHours();
+            minute = day.getMinutes();
+            second = day.getSeconds();
+            noon = "am";
+            if (hour >= 12) {
+                noon = "pm";
+                hour -= 12;
+            }
+            if (hour === 0) {
+                hour = 12;
+            }
+        }
+
+        function setTime() {
+            if (/^\d+$/.test(document.getElementById("Hours").value) && /^\d+$/.test(document.getElementById("Minutes").value) && /^\d+$/.test(document.getElementById("Seconds").value)) {
+                hour = document.getElementById("Hours").value;
+                minute = document.getElementById("Minutes").value;
+                second = document.getElementById("Seconds").value - 1;
+                if (hour >= 12) {
+                    hour -= 12;
+                    noon = "pm";
+                } else {
+                    noon = "am";
+                }
+                if (hour === 0) {
+                    hour = 12;
+                }
+            }
+        }
+
+        function tickTock() {
+            second++;
+            if (second == 60) {
+                minute++;
+                second = 0;
+                if (minute == 60) {
+                    minute = 0;
+                    hour++;
+                }
+            }
+            if (hour === 12 && minute === 0 && second === 0) {
+                if (noon == "am") {
+                    noon = "pm";
+                } else {
+                    noon = "am";
+                }
+            } else if (hour >= 13) {
+                hour -= 12;
+            }
+            if (hour < 10) {
+                hourDiv.innerHTML = "0" + hour;
+            } else {
+                hourDiv.innerHTML = hour;
+            }
+            if (minute < 10) {
+                minuteDiv.innerHTML = "0" + minute;
+            } else {
+                minuteDiv.innerHTML = minute;
+            }
+            if (second < 10) {
+                secondDiv.innerHTML = "0" + second;
+            } else {
+                secondDiv.innerHTML = second;
+            }
+            noonDiv.innerHTML = noon;
+        }
+
+        function create(id, time) {
+            document.getElementById(id).innerHTML = "";
+            document.getElementById(id).innerHTML = "<option value=''>" + id + "</option>";
+            for (i = 0; i < time; i++) {
+                var node = document.createElement("option");
+                node.setAttribute("value", i);
+                var textnode = document.createTextNode(i);
+                node.appendChild(textnode);
+                document.getElementById(id).appendChild(node);
+            }
+        }
+
+        function stopwatch() {
+            hour = 0;
+            minute = 0;
+            second = 0;
+            document.getElementById("am_pm").classList.add("hide");
+            document.getElementsByClassName("stopwatch_on")[0].classList.add("hide");
+            document.getElementsByClassName("stopwatch_off")[0].classList.remove("hide");
+            document.getElementsByClassName("stopwatch_reset")[0].classList.remove("hide");
+        }
+
+        function stopwatchpp() {
+            clearInterval(fun)
+            document.getElementsByClassName("stopwatch_off")[0].classList.add("hide");
+            document.getElementsByClassName("stopwatch_off")[1].classList.remove("hide");
+        }
+
+        function stopwatchppp() {
+            fun = setInterval(tickTock, 1000);
+            document.getElementsByClassName("stopwatch_off")[1].classList.add("hide");
+            document.getElementsByClassName("stopwatch_off")[0].classList.remove("hide");
+        }
+
+        function sw_reset() {
+            hourDiv.innerHTML = "00";
+            minuteDiv.innerHTML = "00";
+            secondDiv.innerHTML = "00";
+            document.getElementsByClassName("stopwatch_on")[0].classList.remove("hide");
+            document.getElementsByClassName("stopwatch_off")[0].classList.add("hide");
+            document.getElementsByClassName("stopwatch_off")[1].classList.add("hide");
+            document.getElementsByClassName("stopwatch_reset")[0].classList.add("hide");
+            clearInterval(fun)
+        }
+    </script>
+</body>
+
+</html>

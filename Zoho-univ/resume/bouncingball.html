@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: gray;
+            font-family: "Times New Roman", Times, serif;
+            font-style: oblique;
+            font-size: 60px;
+            color: #C0C0C0;
+            text-align: center;
+        }
+
+        #board {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 900px;
+            height: 656px;
+            z-index: 1;
+        }
+
+        #dude {
+            position: absolute;
+            top: 385px;
+            left: 0px;
+            width: 70px;
+            height: 50px;
+            z-index: 3;
+        }
+
+        #ball {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 70px;
+            height: 50px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body onload="moveTimer ()" onkeydown="keymoveit(event)">
+
+    <img src="http://bit.ly/2xYv74r" id="board">
+    <img src="http://bit.ly/2wojpyX" id="dude">
+    <img src="http://www.freeiconspng.com/uploads/soccer-ball-png-19.png" id="ball">
+    <br>
+
+    <script>
+        var ydude = 100;
+        var xdude = 200;
+        var yball = 300;
+        var xball = 400;
+        var xspeed = 10;
+        var yspeed = 10;
+        var timer;
+
+        function moveTimer() {
+            if (xball + xspeed > 830) {
+                xspeed = -5 * Math.random() - 5;
+            }
+            if (xball + xspeed < 0) {
+                xspeed = 5 * Math.random() + 5;
+            }
+            if (yball + yspeed > 603) {
+                yspeed = -5 * Math.random() - 5;
+            }
+            if (yball + yspeed < 0) {
+                yspeed = 5 * Math.random() + 5;
+            }
+            xball = xball + xspeed;
+            yball = yball + yspeed;
+            document.getElementById('ball').style.top = yball + "px";
+            document.getElementById('ball').style.left = xball + "px";
+            timer = setTimeout(moveTimer, 50);
+        }
+
+
+
+        function keymoveit(event) {
+
+            var key = event.keyCode;
+            if (key == 39) {
+                xdude += 10;
+            }
+            if (key == 37) {
+                xdude -= 10;
+            }
+            if (key == 38) {
+                ydude -= 10;
+            }
+            if (key == 40) {
+                ydude += 10;
+            }
+            if (xdude > 830) {
+                xdude = 830;
+            }
+            if (ydude > 603) {
+                ydude = 603;
+            }
+            if (xdude < 0) {
+                xdude = 0;
+            }
+            if (ydude < 0) {
+                ydude = 0;
+            }
+            document.getElementById('dude').style.top = ydude + "px";
+            document.getElementById('dude').style.left = xdude + "px";
+            if ((xdude < xball + 50) && (xdude + 50 > xball) && (ydude < yball + 50) && (ydude + 50 > yball)) {
+                clearTimeout(timer);
+                document.body.style.backgroundColor = "red";
+                document.body.innerHTML = "game over";
+            }
+        }
+    </script>
+</body>
+
+</html>

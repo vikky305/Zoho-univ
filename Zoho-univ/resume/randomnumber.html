@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        div {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7hBqNmeqkySmN6q1OZmoYxfUW92HgRL5TQEKVzVkrp3GpAd8-qg");
+            height: 550px;
+            width: 100%;
+            margin-top: 0px;
+        }
+
+        p {
+            background: #ff5900;
+            height: 70px;
+            width: 130px;
+            border: 1px solid black;
+            margin-top: 0px;
+            margin-left: 40%;
+            font-size: 60px;
+            color: white;
+        }
+
+        button {
+            height: 25px;
+            width: 300px;
+            margin-left: 28%;
+        }
+
+        button:hover {
+            background: grey;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            <centre id="random">
+        </p><br>
+        <button onClick="random_no()">Click here to get a random number</button>
+    </div>
+
+    <script>
+        function random_no() {
+            var ran_num = Math.floor(Math.random() * 10000);
+            document.getElementById("random").innerHTML = ran_num;
+        }
+    </script>
+</body>
+
+</html>

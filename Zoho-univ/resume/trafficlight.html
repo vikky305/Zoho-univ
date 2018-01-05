@@ -1,0 +1,196 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        .two {
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHTMzFidQn7hpmkhA_asrXf6gOvLj-A9eOaOUkA8-7KKtBoiHClw);
+
+        }
+
+        p {
+            font-family: cursive;
+            font-size: 25px;
+            color: #ffae4f;
+        }
+
+        .one {
+            height: 400px;
+            width: 150px;
+            border-radius: 20px;
+            border: 1px solid black;
+            background-color: black;
+
+        }
+
+        #color_1 {
+            height: 100px;
+            width: 100px;
+            border-radius: 200px;
+            margin-top: 20px;
+            background-color: white;
+
+        }
+
+        #color_2 {
+            height: 100px;
+            width: 100px;
+            border-radius: 200px;
+            background-color: white;
+
+        }
+
+        #color_3 {
+            height: 100px;
+            width: 100px;
+            border-radius: 200px;
+            background-color: white;
+        }
+
+        #colors {
+            height: 34px;
+            width: 80px;
+            background-color: white;
+            font-weight: bold;
+            color: red;
+        }
+
+        #color {
+            height: 34px;
+            width: 90px;
+            background-color: white;
+            font-weight: bold;
+            color: yellow;
+        }
+
+        #col {
+            height: 34px;
+            width: 70px;
+            background-color: white;
+            font-weight: bold;
+            color: green;
+        }
+
+        #off {
+            height: 34px;
+            width: 75px;
+            background-color: white;
+            font-weight: bold;
+            color: orange;
+        }
+
+        #auto {
+            height: 50px;
+            width: 150px;
+            font-size: 25px;
+            background-color: white;
+            font-weight: bold;
+            color: blue;
+        }
+
+        #colors:hover {
+            background-color: red;
+            color: white;
+        }
+
+        #color:hover {
+            background-color: yellow;
+            color: white;
+        }
+
+        #col:hover {
+            background-color: green;
+            color: white;
+        }
+
+        #off:hover {
+            background-color: orange;
+            color: white;
+        }
+
+        #auto:hover {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="two">
+
+        <center>
+            <p>Traffic Signal</p>
+        </center>
+        <div class="one">
+            <center>
+                <div id="color_1"></div><br>
+                <div id="color_2"></div><br>
+                <div id="color_3"></div><br>
+            </center>
+        </div><br>
+
+        <button id="colors" onclick="stop()">STOP</button>
+        <button id="color" onclick="ready()">READY</button>
+        <button id="col" onclick="go()">GO</button>
+        <button id="auto" onclick="auto_red()">automatic</button>
+        <button id="off" onclick="off()">off</button>
+    </div>
+
+    <script>
+        var a;
+
+        function stop() {
+            document.getElementById("color_1").style.background = "red";
+            document.getElementById("color_2").style.background = "white";
+            document.getElementById("color_3").style.background = "white";
+        }
+
+        function ready() {
+            document.getElementById("color_1").style.background = "white";
+            document.getElementById("color_2").style.background = "yellow";
+            document.getElementById("color_3").style.background = "white";
+        }
+
+        function go() {
+            document.getElementById("color_1").style.background = "white";
+            document.getElementById("color_3").style.background = "green";
+            document.getElementById("color_2").style.background = "white";
+        }
+
+        function off() {
+            document.getElementById("color_1").style.background = "white";
+            document.getElementById("color_3").style.background = "white";
+            document.getElementById("color_2").style.background = "white";
+            clearTimeout(a);
+        }
+
+        function auto_red() {
+            document.getElementById("color_1").style.background = "red";
+            document.getElementById("color_2").style.background = "white";
+            document.getElementById("color_3").style.background = "white";
+            a = setTimeout(function() {
+                auto_yellow()
+            }, 3000);
+        }
+
+        function auto_yellow() {
+            document.getElementById("color_1").style.background = "white";
+            document.getElementById("color_2").style.background = "yellow";
+            document.getElementById("color_3").style.background = "white";
+            a = setTimeout(function() {
+                auto_green()
+            }, 3000);
+        }
+
+        function auto_green() {
+            document.getElementById("color_1").style.background = "white";
+            document.getElementById("color_2").style.background = "white";
+            document.getElementById("color_3").style.background = "green";
+            a = setTimeout(function() {
+                auto_red()
+            }, 3000);
+        }
+    </script>
+</body>
+
+</html>

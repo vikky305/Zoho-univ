@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        .firstinput {
+            height: 50px;
+            width: 220px;
+            border-color: red;
+            text-align: center;
+            font-size: 20px;
+            color: green;
+
+        }
+
+        .secondinput {
+            height: 50px;
+            width: 220px;
+            border-color: green;
+            text-align: center;
+            font-size: 20px;
+            color: red;
+        }
+
+        .thirdinput {
+            height: 50px;
+            width: 220px;
+            border-color: yellow;
+            text-align: center;
+            font-size: 20px;
+            color: blue;
+        }
+
+        .button {
+            height: 50px;
+            width: 220px;
+            font-size: 15px;
+        }
+
+        .head {
+            font-size: 50px;
+            font-style: italic;
+            text-align: center;
+            color: yellow;
+        }
+
+        .a {
+            font-size: 30px;
+            font-style: italic;
+            color: red;
+        }
+
+        .perimeter {
+            color: orange;
+        }
+
+        .area {
+            color: #2ecc71;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" class="firstinput" id="firstinput" placeholder="Enter the first input">in meter<br><br>
+    <input type="number" class="secondinput" id="secondinput" placeholder="Enter the second input">in meter<br><br>
+    <input type="number" class="thirdinput" id="thirdinput" placeholder="Enter the third input">in meter<br><br>
+    <button class="button" onclick="calculate()">click here to calculate area</button><br>
+    <center>
+        <h1 class="head">result</h1>
+        <p class="a perimeter" id="perimeter"></p>
+        <p class="a area" id="area"></p>
+
+    </center>
+
+    <script>
+        var calculate = function() {
+            var a = (document.getElementById("firstinput").value);
+            var b = (document.getElementById("secondinput").value);
+            var c = (document.getElementById("thirdinput").value);
+            var perimeter = (a + b + c);
+            var a4 = Math.pow(a, 4);
+            var ab2 = (Math.pow((a * b), 2));
+            var ac2 = (Math.pow((a * c), 2));
+            var b4 = Math.pow(b, 4);
+            var bc2 = (Math.pow((b * c), 2));
+            var c4 = Math.pow(c, 4);
+            var area = (0.25) * Math.sqrt(-a4 + (2 * ab2) + (2 * ac2) - b4 + (2 * bc2) - c4);
+
+            document.getElementById("perimeter").innerHTML = "perimeter of triangle is " + perimeter+"in meter";
+
+            document.getElementById("area").innerHTML = "area of triangle is " + area+"in meter";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+Here are some notes about the design that you have created for signup and signin for the gym web page.
++ The page has a clean design, it is not cluttered
++ The page is functional, it gives a user the ability to do signup and signin
++ The page works correctly, there are no bugs
+
+- Why is the H in the ZOHO logo on the front page not visible? 
+- Why is the logo stretched out?
+- Tell me something more on the front page? What is this website about?
+- The logo is not the main thing on the webpage.
+	- What is the website about?
+	- some good pictures, showing the effect that your website will have
+	- a small logo, and a small signin in the corners
+- how does the website front page change with different computers/browsers?
+----------------------------------------------------------------------
+
+Once I click on signup
+
++ The page is functional, all the fields work as expected
++ There are good hints, e.g., for the phone and calendar fields that tell me what is expected
++ The general page colors are good
+
+- Do not collect so much information on signup (it will only upset the customer)
+- Just get very basic details (Name, email id, password, phone number)
+- The rest you can get later
+- See whole foods, gold's gym, facebook, etc.
+- The different fields are not aligned in a column or table.  Use that feature.
+- Give hints like in the password/date fields
+- give units (kg, cm) where needed
+- everything should fit in a single screen.  I should not have to scroll
+- If there is an error (e.g., space in a name field) then you should tell what the error is.  It is good that you are highlighting the box in red, but we need more information than that.
+- See how other websites let you know that a signup has been done successfully; and follow that.
+
+----------------------------------------------------------------------
+
+On the main page:
++ There is a lot of good information on the page
++ It is good that you allow the user to change the password
++ There is a lot of good functional links (Diet, BMI, etc.)
+
+- It appears very cluttered, too many things on the website
+- Use pictures, but they should have a pupose.  Why are you putting the picture there?
+- Check out schlotzskys.com
+- I should know by seeing your website, what you ARE ABOUT
+- Are you a gym?  Are you a fitness consultant?  Are you a diet/food chain, selling food?  Right now it is not clear.
+- What are the services you are offering?  
+	- Is it an app?
+	- Is it paid?
+	- Is it a personal service, such as a trainer?
+	- Are you selling books/plans?
+- What are the free advice that you are giving?
+	- Is it online?
+	- Is it printable .pdf matter?
+	- Is it a consultation with a person?
+
+OK, so you tell me that it is a calorie tracking website?
+	- Is there an app?
+	- Will you track my food consumption?
+	- Will you track my activity?  To know how much energy I have used?
+
+

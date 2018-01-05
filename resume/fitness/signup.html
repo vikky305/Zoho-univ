@@ -1,0 +1,345 @@
+<!doctype html>
+<html>
+    <head>
+        <title>signup page</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="icon" href="http://vspot.s3.amazonaws.com/sign-up/Logos/SignUp-Logo.png">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+    
+            #home {
+                background-color: white;
+                background-repeat: no-repeat;
+                height: 30%;
+                width: 100%;
+                background-size: cover;
+            }
+    
+            #signup,
+            #signin,#for_pass,#for_email {
+                background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrN-Nbbg_hob9CVBG8Oqk0sT0E48ueqxsflySwJ_ZQ-dWYmGrF-w");
+                background-repeat: no-repeat;
+                height: 100%;
+                width: 100%;
+                background-size: cover;
+            }
+    
+            #head {
+                font-size: 35px;
+                color: #00aedb;
+                font-family: Comic sans MS;
+                text-align: center;
+                padding-top: 20px;
+                cursor: default;
+            }
+    
+            .sub {
+                height: 50px;
+                width: 200px;
+                margin-left: 42%;
+                margin-top: 35px;
+                margin-bottom: 23px;
+            }
+    
+            .hide {
+                display: none;
+            }
+    
+            #alert {
+                position: fixed;
+                height: 50px;
+                width: 60%;
+                background-color: burlywood;
+                margin-top: 2%;
+                margin-left: 20%;
+                border-radius: 20px;
+                text-align: center;
+                font-size: 35px;
+                padding-top: 2px;
+                color: brown;
+            }
+    
+            .img {
+                height: 508px;
+                width: 100%;
+            }
+    
+            .name,.email,.pass,.cpass {
+                position: relative;
+                padding-top: 14px;
+                width: 50%;
+                height: 50%;
+                
+            }
+    
+            .name,.pass {
+                float: left;
+            }
+    
+            .email,.cpass {
+                margin-left: 50%;
+            }
+    
+            .inputText {
+                font-size: 30px;
+                width: 80%;
+                height: 60%;
+                outline: none;
+                border: none;
+                border-bottom: 1px solid black;
+                margin-top: 4%;
+                margin-left: 10%;
+            }
+    
+            .floating-label {
+                position: absolute;
+                pointer-events: none;
+                left: 14%;
+                top: 57%;
+                transition: 0.2s ease all;
+            }
+    
+            input:focus~.floating-label,
+            input:not(:focus):valid~.floating-label {
+                top: 20px;
+            }
+        </style>
+    </head>
+    
+    <body onload="slideShow()">
+        <div class="whole" style="height: 100%;width: 100%;">
+            <div id="alert" class="hide"></div>
+            <div id=home>
+                <img src="https://zelda.gamepedia.com/media/zelda.gamepedia.com/archive/3/34/20151220141954%21ZU-logo.png" style="width: 10%;float: left;margin-top: 1%;">
+                <img src="https://www.freelogoservices.com/api/main/images/1j+ojl1FOMkX9WypfBe43D6kjfKIrRdGmBfJwXs1M3EMoAJtlSAkgfpq9P87" style="width: 18%;margin-left: 32%;float: left;cursor: pointer;margin-top: 1%;" onclick="change('slide')">
+                <button type="button" class="btn btn-link" style="margin-left: 20%;margin-top: 1%;margin-bottom: 1%;font-size: 175%;" onclick="change('signup')">Create an account</button>
+                <button type="button" class="btn btn-link" style="margin-left: 30%;font-size: 175%;" onclick="change('signin')">Sign in</button>
+            </div>
+            <div class="body" style="height: 100%;width: 100%;padding-top: 10px;">
+                <div id="slide" style="width: 100%;height: 508px;margin-top: 3%;">
+                    <img src="https://static.pexels.com/photos/17840/pexels-photo.jpg" class="img">
+                    <img src="https://media.istockphoto.com/photos/lace-up-for-the-workout-of-your-life-picture-id618982838?k=6&m=618982838&s=612x612&w=0&h=Nst2TzKtZha_KJvCJaicDyRqdsR0HcvMTR624D7uNwc=" class="hide img">
+                    <img src="http://www.herfitness.in/wp-content/uploads/2016/04/yoga-class-in-vikas-puri.jpg" class="hide img">
+                    <img src="https://www.fitnessblender.com/siteassets/blog/o_495_how-to-stop-dieting-and-learn-to-eat-intuitively.jpg" class="hide img">
+                    <img src="http://www.vactualpapers.com/web/wallpapers/karlie-kloss-wearing-blue-yoga-pants-nike-yoga-weight-oss-relax-fitness-training-health-hd-wallpaper/thumbnail/lg.jpg" class="hide img">
+                    <img src="http://www.chopra.com/sites/default/files/field/image/MeditatingSunset.jpg" class="hide img">
+                </div>
+                <div id=signup class="hide" style="margin-top: 3%;">
+                    <div id=head>Signup page</div>
+                    <div class="box" style="height: 300px;width: 65%;background-color: cornsilk;margin-left: 18%;margin-top: 30px;">
+                        <div class="name">
+                            <input type="text" class="inputText" id="Name" required/>
+                            <span class="floating-label">Enter Your name</span>
+                        </div>
+                        <div class="email">
+                            <input type="email" class="inputText" id="Email" required/>
+                            <span class="floating-label">Your email address</span>
+                        </div>
+                        <div class="pass">
+                            <input type="password" class="inputText" id="Password" required/>
+                            <span class="floating-label">Enter Your password</span>
+                        </div>
+                        <div class="cpass">
+                            <input type="password" class="inputText" id="cpass" required/>
+                            <span class="floating-label">confirm Your password</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-success sub" id=sub1 onclick="submit('signup')">Sign up</button>
+                </div>
+                <div id=signin class="hide" style="margin-top: 3%;">
+                    <div id=head>Signin page</div>
+                    <div class="box" style="height: 300px;width: 65%;background-color: cornsilk;margin-left: 18%;margin-top: 30px;">
+                        <div class="email" style="margin: 0px;width: 60%;">
+                            <input type="email" class="inputText" style="margin-left: 37%;" id="email1" required/>
+                            <span class="floating-label" style="left: 195px;">Your email address</span>
+                        </div>
+                        <div class="pass" style="margin: 0px;width: 60%;">
+                            <input type="password" class="inputText" style="margin-left: 37%;" id="pass1" required/>
+                            <span class="floating-label" style="left: 195px;">Enter Your password</span>
+                        </div>
+                        <button type="button" class="btn btn-link" style="font-size: 20px;margin: 13% 0px 0px 16%;" onclick="change('for_email')" >Forgot password</button>
+                    </div>
+                    <button type="button" class="btn btn-info sub" id=sub2 onclick="check()">Sign in</button>
+                </div>
+                <div id=for_email class="hide" style="margin-top: 3%;">
+                    <div id=head>Enter your email</div>
+                    <div class="box" style="height: 300px;width: 65%;background-color: cornsilk;margin-left: 18%;margin-top: 30px;">
+                        <div class="email" style="margin: 0px;width: 60%;">
+                            <input type="email" class="inputText forget_email" style="margin-left: 37%;" id="email1" required/>
+                            <span class="floating-label" style="left: 195px;">Your email address</span>
+                        </div>
+                        
+                    </div>
+                    <button type="button" class="btn btn-info sub forget" id='sub2'>submit</button>
+                </div>
+                <div id=for_pass class="hide" style="margin-top: 3%;">
+                    <div id=head>Enter your password</div>
+                    <div class="box" style="height: 300px;width: 65%;background-color: cornsilk;margin-left: 18%;margin-top: 30px;">
+                        <div class="pass" style="margin: 0px;width: 60%;">
+                            <input type="password" class="inputText forget_pass" style="margin-left: 37%;" id="pass1" required/>
+                            <span class="floating-label" style="left: 195px;">Enter Your password</span>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-info sub" id=sub2 onclick="check1()" >log in</button>
+                </div>
+            </div>
+        
+        </div>
+        <script>
+            var email;
+            var email12;
+            var position = 0;
+            var signup = ["Name", "Email", "Password", "cpass"];
+            var signin = ["email1", "pass1"];
+            var page = ["slide", "signup", "signin","for_email","for_pass"];
+    
+            function slideShow() {
+                var img = document.getElementsByClassName("img");
+                for (i = 0; i < img.length; i++) {
+                    img[i].classList.add("hide");
+                }
+                position++;
+                if (position >= img.length) {
+                    position = 0;
+                }
+                img[position].classList.remove("hide");
+                setTimeout(slideShow, 5000);
+            }
+    
+            function change(want) {
+                for (i = 0; i < page.length; i++) {
+                    $('#'+page[i]).addClass("hide");
+                }
+                $("#"+want).removeClass("hide");
+            }
+            
+            $(".forget").click(function(){
+                email12=$('.forget_email').val();
+                $.post("/forget","Email="+$('.forget_email').val()
+                ,function(data,status){
+                    $("#alert").text(data);
+                    $("#alert").removeClass("hide");
+                    setTimeout(myFunction, 3000);
+                    if(data=="Email sent to you"){
+                        change('for_pass')
+                        $('.forget_email').val("")
+                    }
+                    
+                });
+            });
+            
+            function check1(){
+                $.post("/forget1","Email="+email12+"&Password="+$('.forget_pass').val()
+                ,function(data,status){
+                    if (data == "signin successful") {
+                        document.cookie = "Email="+email12+"; expires=Thu, 18 Dec 2019 12:00:00 UTC";
+                        $("#alert").text(data);
+                        $("#alert").removeClass("hide");
+                        setTimeout(function() {
+                            myFunction("fit")
+                        }, 3000);
+                        email12="";
+                    } else if (data == "password mismatch") {
+                        $("#alert").text(data);
+                        $("#alert").removeClass("hide");
+                        setTimeout(myFunction, 3000);
+                    }
+                });
+            }
+    
+            function submit(get) {
+                email=$("#Email").val();
+                var userDetails = {};
+                var check = {};
+                var wrong = {};
+                var alert = ["name must contain 3 or above characters", "enter valid email like abc@xyz.qw", "password must contain 6 or above characters", "password and confirm password must be same"]
+                var regex = ["^[a-zA-z. ]{3,}$", "^[a-zA-z0-9_.]{3,}@[a-zA-z0-9_]{3,}\.[a-zA-z0-9_]{2,}$", "^.{6,}$"];
+                for (i = 0; i < signup.length; i++) //for getting values from input 
+                {
+                    console.log(userDetails);
+                    console.log(check);
+                    console.log(wrong);
+                    userDetails[signup[i]] =$("#"+signup[i]).val();
+                    $('#'+Object.keys(userDetails)[i]).css('border', 'none');
+                    check[signup[i]] = new RegExp(regex[i], "g").test(Object.values(userDetails)[i]);
+                    if (i == 3) {
+                        check[signup[3]] = (Object.values(userDetails)[2] == Object.values(userDetails)[3]);
+                    }
+                    if (Object.values(check)[i] === false) {
+                        wrong[Object.keys(check)[i]] = Object.values(check)[i];
+                        $('#'+Object.keys(check)[i]).css('border', '2px solid #d41243');
+                    }
+                    if (wrong[signup[i]] !== undefined) {
+                        $("#alert").text(alert[i]);
+                        $("#alert").removeClass("hide");
+                        setTimeout(myFunction, 3000);
+                        break;
+                    }
+                }
+    
+                if (Object.keys(wrong).length === 0) {
+                    $("#Name,#Email,#Password,#cpass").val("");
+                    setcookies(userDetails);
+                }
+            }
+    
+            function setcookies(userDetails) {
+                var cookie = "";
+                for (l = 0; l < 3; l++) {
+                    cookie += Object.keys(userDetails)[l] + "=" + Object.values(userDetails)[l] + "&";
+                }
+                cookie = cookie.slice(0, length - 1);
+                send(cookie);
+            }
+    
+            function send(data) {
+                $.post("/signup",data
+                ,function(data, status){
+                    if (data == "Signup sucessfully") {
+                        $("#alert").text(data);
+                        $("#alert").removeClass("hide");
+                        document.cookie = "Email="+email+"; expires=Thu, 18 Dec 2019 12:00:00 UTC";
+                        setTimeout(function() {
+                            myFunction("fit")
+                        }, 3000);
+                    } else if (data == "email already exist please use different email id") {
+                        $("#alert").text(data);
+                        $("#alert").removeClass("hide");
+                        setTimeout(myFunction, 3000);
+                    }
+                });
+            }
+    
+            function check() {
+                var data = "Email=" + document.getElementById("email1").value + "&Password=" + document.getElementById("pass1").value;
+                $.post("/signin",data               
+                ,function(data, status){
+                    if (data == "signin successful") {
+                        document.cookie = "Email="+document.getElementById("email1").value+"; expires=Thu, 18 Dec 2019 12:00:00 UTC";
+                        $("#alert").text(data);
+                        $("#alert").removeClass("hide");
+                        setTimeout(function() {
+                            myFunction("fit")
+                        }, 3000);
+                    } else if (data == "password mismatch" || "email doesn't exist please enter correct email id") {
+                        $("#alert").text(data);
+                        $("#alert").removeClass("hide");
+                        setTimeout(myFunction, 3000);
+                    }
+                });
+            }
+    
+            function myFunction(con) {
+                document.getElementById('alert').classList.add("hide");
+                if (con == "fit") {
+                    location.href = "/fitness";
+                }
+            }
+        </script>
+    </body>
+
+</html>

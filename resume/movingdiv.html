@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        #character {
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            background: #65fe00;
+        }
+
+        #fix {
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            background: #ffff00;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fix">
+        <div id="character"></div>
+    </div>
+
+
+    <script>
+        var keys = {};
+        keys.UP = 38;
+        keys.LEFT = 37;
+        keys.RIGHT = 39;
+        keys.DOWN = 40;
+
+
+        var character = {
+            x: 100,
+            y: 100,
+            speedMultiplier: 2,
+            element: document.getElementById("character")
+        };
+
+
+        document.body.onkeyup =
+            document.body.onkeydown = function(e) {
+                if (e.preventDefault) {
+                    e.preventDefault();
+                } else {
+                    e.returnValue = false;
+                }
+                var kc = e.keyCode || e.which;
+                keys[kc] = e.type == 'keydown';
+            };
+
+        var moveCharacter = function(dx, dy) {
+            character.x += (dx || 0) * character.speedMultiplier;
+            character.y += (dy || 0) * character.speedMultiplier;
+            character.element.style.left = character.x + 'px';
+            character.element.style.top = character.y + 'px';
+        };
+
+        var detectCharacterMovement = function() {
+            if (keys[keys.LEFT]) {
+                moveCharacter(-1, 0);
+            }
+            if (keys[keys.RIGHT]) {
+                moveCharacter(1, 0);
+            }
+            if (keys[keys.UP]) {
+                moveCharacter(0, -1);
+            }
+            if (keys[keys.DOWN]) {
+                moveCharacter(0, 1);
+            }
+        };
+
+
+        moveCharacter();
+
+
+        setInterval(function() {
+            detectCharacterMovement();
+        }, 1000 / 24);
+        // if (character.element.style.left ="374 px"){
+        //    alert("Hello! I am an alert box!");
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        .input {
+            height: 50px;
+            width: 200px;
+            border-color: red;
+            text-align: center;
+            font-size: 20px;
+            color: green;
+
+        }
+
+        .button {
+            height: 50px;
+            width: 200px;
+            font-size: 15px;
+        }
+
+        .output {
+            font-size: 30px;
+            font-style: italic;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" class="input" id="input" placeholder="Enter the year"><br><br>
+
+    <button class="button" onclick="calculate()">click here to find</button><br>
+    <p class="output" id="output"></p>
+
+    <script>
+        var calculate = function() {
+            var year = (document.getElementById("input").value);
+            var ans;
+            if (year == "") {
+                ans = 1;
+            }
+
+
+            if (year % 4 == 0) {
+                if (year % 100 == 0) {
+                    if (year % 400 == 0) {
+
+
+                        ans = true;
+
+                    } else {
+                        ans = false;
+                    }
+                } else {
+                    ans = true;
+                }
+            } else {
+                ans = false;
+            }
+            if (ans === 1) {
+                document.getElementById("output").innerHTML = "Please enter the year ";
+            } else if (ans == true) {
+                document.getElementById("output").innerHTML = "The given year is an leap year ";
+            } else {
+                document.getElementById("output").innerHTML = "The given year is not an leap year ";
+            }
+        }
+    </script>
+</body>
+
+</html>

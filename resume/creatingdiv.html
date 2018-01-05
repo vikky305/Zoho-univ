@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        #button {
+            width: 400px;
+            height: 30px;
+            margin: 30px;
+        }
+
+        body {
+            margin: 10px;
+        }
+
+        #container {
+            height: 100%;
+            width: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <button id="button" onclick="div()">Click Here</button>
+        <div id="container"> </div>
+
+    </center>
+
+    <script>
+        function div() {
+            var list = [
+                "YELLOW",
+                "OLIVE",
+                "LIME",
+                "GREEN",
+                "AQUA",
+                "TEAL",
+                "BLUE",
+                "NAVY",
+                "FUCHSIA",
+                "PURPLE"
+
+            ];
+            for (n = 0; n < list.length; n++) {
+                var d = document.createElement("div");
+                d.setAttribute(
+                    "style",
+                    "height:105px;width:105px;border:1px solid grey;background-color:" +
+                    list[n] +
+                    ";float:left"
+                );
+                document.body.appendChild(d);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-image: url("https://image.freepik.com/free-psd/white-wood-texture-background-design_1022-75.jpg");
+
+            background-size: 100% 900px;
+        }
+
+        .firstinput {
+            height: 50px;
+            width: 200px;
+            border-color: red;
+            text-align: center;
+            font-size: 20px;
+            color: green;
+
+        }
+
+        .secondinput {
+            height: 50px;
+            width: 200px;
+            border-color: green;
+            text-align: center;
+            font-size: 20px;
+            color: red;
+        }
+
+        .button {
+            height: 50px;
+            width: 200px;
+            font-size: 15px;
+        }
+
+        .head {
+            font-size: 50px;
+            font-style: italic;
+            text-align: center;
+            color: yellow;
+        }
+
+        .a {
+            font-size: 30px;
+            font-style: italic;
+            color: red;
+        }
+
+        .day {
+            color: orange;
+        }
+
+        .hour {
+            color: #2ecc71;
+        }
+
+        .minute {
+            color: #e74c3c;
+        }
+
+        .second {
+            color: #424949;
+        }
+
+        .week {
+            color: #212121;
+        }
+
+        .month {
+            color: #f1c40f;
+        }
+
+        .year {
+            color: #6e2c00;
+        }
+    </style>
+</head>
+
+<body>
+
+    <center><input type="date" class="firstinput" id="firstinput" placeholder="Enter the first date"><br><br>
+        <input type="date" class="secondinput" id="secondinput" placeholder="Enter the second date"><br><br>
+        <button class="button" onclick="calculate()">click here to calculate date</button><br></center>
+    <p class="head">DAYS BETWEEN GIVEN DATES</p>
+    <p class="a second" id="second"></p>
+    <p class="a minute" id="minute"></p>
+    <p class="a hour" id="hour"></p>
+    <p class="a day" id="day"></p>
+
+
+
+    <p class="a week" id="week"></p>
+
+    <p class="a month" id="month"></p>
+
+    <p class="a year" id="year"></p>
+
+
+    <script>
+        var calculate = function() {
+            var day_start = new Date(document.getElementById("firstinput").value);
+            var day_end = new Date(document.getElementById("secondinput").value);
+
+
+            var total_days = (day_end - day_start) / (1000 * 60 * 60 * 24);
+            document.getElementById("day").innerHTML = "Number of days between is  " + Math.floor(total_days);
+
+
+            var total_hour = (total_days * 24);
+            document.getElementById("hour").innerHTML = "Number of hour between is  " + Math.floor(total_hour);
+
+
+            var total_minute = (total_hour * 60);
+            document.getElementById("minute").innerHTML = "Number of minute between is  " + Math.floor(total_minute);
+
+
+            var total_second = (total_minute * 60);
+            document.getElementById("second").innerHTML = "Number of second between is  " + Math.floor(total_second);
+
+
+            var total_week = (total_days / 7);
+            var remaining_day = (total_days % 7);
+            document.getElementById("week").innerHTML = "Number of week between is  " + Math.floor(total_week) + ".  Then the remaining days of week is  " + Math.floor(remaining_day);
+
+
+
+            var total_month = (total_days / 30);
+            var remaining_daym = (total_days % 30);
+            var remaining_week = (remaining_daym / 7);
+            var remaining_mday = (remaining_daym % 7);
+            document.getElementById("month").innerHTML = "Number of month between is  " + Math.floor(total_month) + ".  Then the remaining weeks of month is     " + Math.floor(remaining_week) + ".   Then the remaining days of week is     " + Math.floor(remaining_mday);
+
+
+
+
+            var total_year = (total_days / 365);
+            var remaining_dayy = (total_days % 365);
+            var remaining_month = (remaining_dayy / 30);
+            var remaining_dayym = (remaining_dayy % 30);
+            var remaining_weeky = (remaining_dayym / 7);
+            var remaining_yday = (remaining_dayym % 7);
+            document.getElementById("year").innerHTML = "Number of year between is  " + Math.floor(total_year) + ".  Then the remaining month of year is     " + Math.floor(remaining_month) + ".  Then the remaining weeks of month is     " + Math.floor(remaining_weeky) + ".  Then the remaining days of week is     " + Math.floor(remaining_yday);
+
+        }
+    </script>
+</body>
+
+</html>

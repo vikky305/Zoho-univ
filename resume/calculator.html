@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        .main {
+            width: 350px;
+            height: 480px;
+            border: 1px solid;
+            background: blanchedalmond;
+            margin-top: 20px;
+        }
+
+        .text {
+            font-weight: bold;
+            margin-top: 30px;
+            margin-left: 60px;
+            font-family: lato;
+            font-size: 30px;
+            color: red;
+        }
+
+        .one {
+            width: 350px;
+            height: 70px;
+        }
+
+        .two {
+            width: 320px;
+            height: 240px;
+            margin-top: 10px;
+            background: burlywood;
+        }
+
+        button {
+            width: 50px;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25px;
+        }
+
+        input {
+            width: 320px;
+            height: 50px;
+            border: 1px solid;
+            margin: 15px 15px 15px 15px;
+            background: white;
+            font-size: 25px;
+
+        }
+
+        .box {
+            width: 330px;
+            height: 380px;
+            border: 1px solid;
+            margin-top: 15px;
+            margin-left: 10px;
+            background: bisque;
+        }
+
+        button:hover {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="one">
+            <input type="number" id="out" class="header"></input>
+        </div>
+        <div class="box">
+            <div class="two">
+                <button onclick="on()">ON</button>
+                <button onclick="off()">OFF</button>
+                <button on1click="click()">(</button>
+                <button onclick="click1()">)</button>
+                <button onclick="num('1')">1</button>
+                <button onclick="num('2')">2</button>
+                <button onclick="num('3')">3</button>
+                <button onclick="sum('+')">+</button>
+                <button onclick="num('4')">4</button>
+                <button onclick="num('5')">5</button>
+                <button onclick="num('6')">6</button>
+                <button onclick="minus('-')">-</button>
+                <button onclick="num('7')">7</button>
+                <button onclick="num('8')">8</button>
+                <button onclick="num('9')">9</button>
+                <button onclick="multiple()">*</button>
+                <button onclick="num('0')">0</button>
+                <button onclick="divide('/')">/</button>
+                <button onclick="equal()">=</button>
+                <button onclick="root()">Sqrt</button>
+                <button onclick="one('sin')">Sin</button>
+                <button onclick="two('cos')">Cos</button>
+                <button onclick="three('tan')">tan</button>
+                <button onclick="clr()">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var i = 0;
+        var j = 0;
+        var element=document.getElementById("out");
+        
+        function on() {
+            element.style.background = "aquamarine";
+        }
+
+        function off() {
+            element.style.background = "white";
+            element.value = "";
+        }
+
+        function clr() {
+            var i = 0;
+            var j = 0;
+            element.value = "";
+        }
+        var num = function(i) {
+            element.value += i;
+        }
+        var sum = function() {
+            count = 1;
+            i = element.value;
+            element.value = "";
+        }
+        var minus = function() {
+            count = 2;
+            i = element.value;
+            element.value = "";
+        }
+        var multiple = function() {
+            count = 3;
+            i = element.value;
+            element.value = "";
+        }
+        var divide = function() {
+            count = 4;
+            i = element.value;
+            element.value = "";
+        }
+        var one = function() {
+            count = 5;
+            i = element.value;
+        }
+        var two = function() {
+            count = 6;
+            i = element.value;
+        }
+        var three = function() {
+            count = 7;
+            i = element.value;
+        }
+        var root = function() {
+            count = 8;
+            i = element.value;
+        }
+        var equal = function() {
+            j = element.value;
+            if (count == 1) {
+                element.value = Number(i) + Number(j);
+            }
+            if (count == 2) {
+                element.value = Number(i) - Number(j);
+            }
+            if (count == 3) {
+                element.value = Number(i) * Number(j);
+            }
+            if (count == 4) {
+                element.value = Number(i) / Number(j);
+            }
+            if (count == 5) {
+                element.value = Math.sin(j);
+            }
+            if (count == 6) {
+                element.value = Math.cos(j);
+            }
+            if (count == 7) {
+                element.value = Math.tan(j);
+
+            }
+            if (count == 8) {
+                element.value = Math.sqrt(j);
+
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
